@@ -11,14 +11,20 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
- name = "About"
- pageRef = "about"
- weight = 10
+  name = "About"
+  pageRef = "about"
+  weight = 10
 
 [[main]]
- name = "Blog"
- pageRef = "posts"
- weight = 10
+  name = "Blog"
+  pageRef = "posts"
+  weight = 20
+
+[[main]]
+  name = "HomeLab"
+  pre = "link"
+  url = "https://homepage.toytag.net"
+  weight = 30
 
 # [[main]]
 #  name = "Parent"
@@ -46,16 +52,6 @@
 #  pre = "link"
 #  url = "https://homepage.toytag.net"
 #  weight = 20
-
-# [[main]]
-#  name = "Categories"
-#  pageRef = "categories"
-#  weight = 20
-
-# [[main]]
-#  name = "Tags"
-#  pageRef = "tags"
-#  weight = 30
 
 
 # -- Footer Menu --

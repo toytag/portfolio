@@ -8,9 +8,9 @@ title = "@toytag.net"
   isoCode = "en"
   rtl = false
   dateFormat = "Mon, Jan 2, 2006"
-  # logo = "img/signiture.png"
+  # logo = "logo.png"
   # secondaryLogo = "logo.png"
-  # description = "My awesome website"
+  description = "Zhenzhong \"Anthony\" Tang's Odyssey: Portfolio, Blog, and Beyond"
   copyright = "Copy, _right?_ :thinking_face: <br> &copy; { year } Zhenzhong Tang"
 
 [author]
@@ -22,8 +22,8 @@ title = "@toytag.net"
     { linkedin = "https://www.linkedin.com/in/zhenzhong-anthony-tang-82334a210" },
     { instagram = "https://instagram.com/toytag12" },
     { github = "https://github.com/toytag" },
-    # { email = "mailto:hello@your_domain.com" },
     # { link = "https://homepage.toytag.net/" },
+#     { email = "mailto:hello@your_domain.com" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
 #     { blogger = "https://username.blogspot.com/" },
