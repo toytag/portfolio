@@ -20,7 +20,7 @@ showTableOfContents : false
 
 {{< timeline >}}
 
-{{< about-timelineItem icon="check" header="amazon" badge="Sep. 2021 - Dec. 2022" subheader="Software Development Engineering Intern in Ads Department" >}}
+{{< about-timelineItem icon="check" header="amazon" badge="Sep. 2022 - Dec. 2022" subheader="Software Development Engineering Intern in Ads Department" >}}
   Contributed to low-latency machine learning remote inference service development, especially in testing and monitoring.
 {{< /about-timelineItem >}}
 
