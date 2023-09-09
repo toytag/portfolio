@@ -22,7 +22,7 @@ defaultBackgroundImage = "img/bg-blur.png" # used as default for background imag
 
 highlightCurrentMenuArea = true
 smartTOC = true
-smartTOCHideUnfocusedChildren = true
+smartTOCHideUnfocusedChildren = false
 
 [header]
   layout = "fixed-fill-blur" # valid options: basic, fixed, fixed-fill, fixed-fill-blur
