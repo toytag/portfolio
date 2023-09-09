@@ -13,7 +13,7 @@ showSummary: false
 Enabling a 6-joint robotic arm to draw portraits.
 {{< /lead >}}
 
-![Group Photo](featured.jpeg "Left to Right: Zhenzhong Tang (me), Teng Xu, Ganlin Zhang, Ziyuan Hu, Weijie Lyu")
+![Group Photo](featured.jpg "Left to Right: Zhenzhong Tang (me), Teng Xu, Ganlin Zhang, Ziyuan Hu, Weijie Lyu")
 
 ## Quick Demo
 
