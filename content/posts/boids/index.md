@@ -9,7 +9,7 @@ showSummary: false
 
 {{< katex >}}
 
-## Introduction
+<!-- ## Introduction -->
 
 ![](img/demo.gif "Tested on: Windows 11 Pro 22H2, AMD EPYC 7V12 64-Core Processor (4 vCPU cores) @ 2.44GHz 28GiB, Tesla T4 16GiB (Azure)")
 
@@ -80,7 +80,7 @@ We see even more improved results when we set the grid cell width to 1 times the
 2. **27-cell Coherent Grid Search and 8-cell Coherent Grid Search**: Current(blue) is the 27-cell coherent grid search, and baseline(green) is the 8-cell coherent grid search.
 ![](img/coherent-8-27.png)
 
-## QA
+## Q&A
 
 <h4>For each implementation, how does changing the number of boids affect performance? Why do you think this is?</h4>
 
@@ -99,7 +99,10 @@ We see even more improved results when we set the grid cell width to 1 times the
 *Yes, using 27 neighbor cells improved the performance by quite a lot. On one hand there are more cells to search, but on the other hand, the search is more accurate, so that we can avoid checking boids that are not in distance from the current boid, which results in less global memory access. This is especially useful when the number of boids is large. All in all, our program is still **memory-bounded**.*
 
 ## References
+
+```
 1. https://en.wikipedia.org/wiki/Boids
 2. http://www.vergenet.net/~conrad/boids/pseudocode.html
+```
 
 {{< github repo="toytag/Project1-CUDA-Flocking" >}}

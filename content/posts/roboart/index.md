@@ -1,7 +1,7 @@
 ---
 title: "RoboArt: Creating Portrait Art with Robotics and Algorithms"
 date: 2019-12-05T10:07:06-05:00
-tags: ["robotics", "computer vision"]
+tags: ["computer vision", "robotics"]
 
 showAuthor: false
 showSummary: false
