@@ -31,16 +31,16 @@ Even with CUDA, this method is SOOOO slow that it can barely run with more than 
 
 To avoid checking every other boids in the simulation, we can use a uniform grid to divide the space into cells. Each boid is assigned to a cell based on its position. Then, we only need to check the boids in the same cell and its neighboring cells.
 
-<img src="img/Boids-Ugrid-base.jpg" class="inline grid-w50" />
-<img src="img/Boids-Ugrid-mark.jpg" class="inline grid-w50" />
-<img src="img/scattered-impl.jpg" />
+<img src="img/Boids-Ugrid-base.jpg" class="inline grid-w50" /> <img src="img/Boids-Ugrid-mark.jpg" class="inline grid-w50" />
+
+![](img/scattered-impl.jpg)
 
 The images show a simplified version in 2D plane, with grid cell width equals to 2 times the maximum search radius. Each boids would only need to check at most 4 neighbor cells (or in 3D case, 8 neighbor cells). This significantly reduces the number of global memory access.
 
 ### Coherent Grid Search
 
-<img src="img/coherent-mem.svg" />
-<img src="img/coherent-impl.jpg" />
+![](img/coherent-mem.png)
+![](img/coherent-impl.jpg)
 
 We can store the sorted position and velocity of boids based on cell indexes, so that boids data are contiguous in memory from the perspective of grid cells. The specific implementation eliminates an overhead associated with fetching a pointer index from global memory to access the position and velocity of boids in global memory. Interestingly, one parallelizing sort is considerably faster than the cost of random fetches of global memory. Also, ***coalesced*** memory access benefits more from cache and compiler optimizations.
 
