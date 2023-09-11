@@ -63,7 +63,7 @@ smartTOCHideUnfocusedChildren = false
   seriesOpened = false
   showHeadingAnchors = true
   showPagination = true
-  invertPagination = false
+  invertPagination = true
   showReadingTime = true
   showTableOfContents = true
   showRelatedContent = true
@@ -72,16 +72,16 @@ smartTOCHideUnfocusedChildren = false
   showAuthorsBadges = true
   showWordCount = true
   showSummary = true
-  # sharingLinks = [
-  #   "email",
-  #   "facebook",
-  #   "linkedin",
-  #   "pinterest",
-  #   "reddit",
-  #   "telegram",
-  #   "twitter",
-  #   "whatsapp",
-  # ]
+  sharingLinks = [
+    "email",
+    "facebook",
+    "linkedin",
+    "pinterest",
+    "reddit",
+    "telegram",
+    "twitter",
+    "whatsapp",
+  ]
 
 [list]
   showHero = true
