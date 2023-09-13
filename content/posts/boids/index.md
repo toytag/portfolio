@@ -1,5 +1,5 @@
 ---
-title: "Boids, A Flocking Simulation"
+title: "Boids Flocking Simulation"
 date: 2023-09-11T00:58:30-04:00
 # draft: true
 tags: ["cuda", "parallel computing"]
