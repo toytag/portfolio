@@ -9,55 +9,45 @@ showSummary: false
 <style>
 table {
   width: 100%;
-  border-collapse: collapse;
+  table-layout: fixed !important;
 }
 
-th, td {
-  vertical-align: middle !important;
+td figure {
+  margin: 1em 0 !important;
 }
 
-.t2 table th:first-of-type {
+.t2 table th,
+.t2 table td {
   width: 50%;
-}
-.t2 table th:nth-of-type(2) {
-  width: 50%;
+  padding: 0.25em;
 }
 
-.t3 table th:first-of-type {
+.t3 table th,
+.t3 table td {
   width: 33%;
-}
-.t3 table th:nth-of-type(2) {
-  width: 34%;
-}
-.t3 table th:nth-of-type(3) {
-  width: 33%;
+  padding: 0.25em;
 }
 
-.t4 table th:first-of-type {
-  width: 24%;
-}
-.t4 table th:nth-of-type(2) {
+.t4 table th,
+.t4 table td {
   width: 25%;
-}
-.t4 table th:nth-of-type(3) {
-  width: 25%;
-}
-.t4 table th:nth-of-type(4) {
-  width: 24%;
+  padding: 0.25em;
 }
 
-.t1_3 table th:first-of-type {
-  text-align: center;
-  vertical-align: middle;
+.t1_3 th:first-child,
+.t1_3 td:first-child {
+  writing-mode: vertical-rl; /* Vertical writing mode, right-to-left */
+  text-orientation: mixed; /* Mixed orientation, for better compatibility */
+  transform: rotate(180deg); /* Rotate text 180 degrees to make it upright */
+  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 0.25em;
+  width: 2em; /* Let the first column adjust to fit the content */
 }
-.t1_3 table th:nth-of-type(2) {
-  width: 34%;
-}
-.t1_3 table th:nth-of-type(3) {
-  width: 33%;
-}
-.t1_3 table th:nth-of-type(4) {
-  width: 32%;
+
+.t1_3 th:not(:first-child),
+.t1_3 td:not(:first-child) {
+  width: calc((100% - 0px) / 3); /* Divide the remaining width by 3 for the other columns */
+  padding: 0.25em;
 }
 </style>
 
@@ -70,10 +60,10 @@ th, td {
 A path tracer is a rendering technique that simulates the behavior of light in a scene. It uses Monte Carlo method to estimate the radiance at each pixel of an image by tracing the path of light through the scene. The algorithm is iterative and parallel in nature, so it runs intuitively and fairly well on CUDA. And it is able to simulate many effects that are difficult with other rendering techniques, such as soft shadows, depth of field, caustics, ambient occlusion, and indirect lighting.
 
 {{< gallery >}}
-  <img src="img/085-coffee.2023-10-12_05-41-53z.1000samp.png" class="grid-w50" />
-  <img src="img/stanford-bunny.2023-10-11_16-37-58z.1000samp.png" class="grid-w50" />
-  <img src="img/cow.2023-10-07_12-21-39z.1000samp.png" class="grid-w50" />
-  <img src="img/gear.2023-10-12_06-02-45z.1000samp.png" class="grid-w50" />
+  <img src="img/085-coffee.2023-10-12_05-41-53z.1000samp.png" class="grid-w50 rounded-md" />
+  <img src="img/stanford-bunny.2023-10-11_16-37-58z.1000samp.png" class="grid-w50 rounded-md" />
+  <img src="img/cow.2023-10-07_12-21-39z.1000samp.png" class="grid-w50 rounded-md" />
+  <img src="img/gear.2023-10-12_06-02-45z.1000samp.png" class="grid-w50 rounded-md" />
 {{< /gallery >}}
 
 
@@ -94,7 +84,7 @@ And we also have an interesting mirror scene, where a glossy sphere is placed in
 ### Material System
 
 <!-- ![](img/materials.svg) -->
-<img src="img/materials.svg" />
+<img src="img/materials.svg" class="rounded-md" />
 
 Material system is adopted from [glTF Specification](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#appendix-b-brdf-implementation).
 
@@ -110,7 +100,7 @@ Using the `metallic` and `roughness` parameter, the material can be either diele
 <div id="test" class="t1_3" >
 
 || Diffuse | Imperfect Specular | Pure Specular |
-|-:| :----------: | :-----------: | :----------------: |
+|:-:| :----------: | :-----------: | :----------------: |
 |**Dielectric**| ![](img/cornell.2023-10-12_00-04-31z.2000samp.png) | ![](img/cornell.2023-10-12_00-11-43z.2000samp.png) | ![](img/cornell.2023-10-12_00-05-52z.2000samp.png) |
 |**Metal**| ![](img/cornell.2023-10-12_00-21-21z.2000samp.png) | ![](img/cornell.2023-10-12_00-17-32z.2000samp.png) | ![](img/cornell.2023-10-12_00-23-53z.2000samp.png) |
 |**Glass**| ![](img/cornell.2023-10-12_01-07-37z.2000samp.png) | ![](img/cornell.2023-10-12_00-55-54z.2000samp.png) | ![](img/cornell.2023-10-12_00-47-47z.2000samp.png) |
@@ -228,7 +218,7 @@ Additionally, we could sort the rays by material type to improve the performance
 Bounding volume hierarchy (BVH) is a tree structure on top of the scene geometry to accelerate ray tracing. The idea is to group the scene geometry into a hierarchy of bounding volumes, and the ray tracer can quickly discard the entire group of primitives if the ray does not intersect with the bounding volume.
 
 <!-- ![](img/bvh.svg) -->
-<img src="img/bvh.svg" />
+<img src="img/bvh.svg" class="rounded-md" />
 
 Image from [PBRT 4.3](https://pbr-book.org/3ed-2018/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies) is a good illustration of BVH true. The BVH is built using the equal count partition method, which tries to split the primitives into two equal count groups. The BVH is built on the CPU in a linear buffer (heap like structure) and then copied to the GPU for ray tracing. BVH could be potentially optimized by utilizing SAH (Surface Area Heuristic) and building the BVH directly on the GPU.
 
@@ -237,7 +227,7 @@ Image from [PBRT 4.3](https://pbr-book.org/3ed-2018/Primitives_and_Intersection_
 Let's take a look at the performance of the path tracer with different features enabled. Stream compaction plays a important role in the correctness of the algorithm in addition to its performance benefits. So stream compaction will be enabled in all tests and we will use path tracer with only stream compaction method enabled as the baseline.
 
 <!-- ![](img/Average%20Frame%20Generation%20Time%20Comparison%20(Lower%20is%20Better).svg) -->
-<img src="img/Average%20Frame%20Generation%20Time%20Comparison%20(Lower%20is%20Better).svg" />
+<img src="img/Average%20Frame%20Generation%20Time%20Comparison%20(Lower%20is%20Better).svg" class="rounded-md" />
 
 Cornell-Metal and Cornell-Glass are simple scenes with metal or glass material balls in side the cornell box. Those spheres is not in the mesh system therefore BVH has no effect on the performance.
 
