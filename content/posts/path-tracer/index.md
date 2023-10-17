@@ -12,42 +12,19 @@ table {
   table-layout: fixed !important;
 }
 
+th, td {
+  padding: 0.25em !important;
+  vertical-align: middle !important;
+}
+
 td figure {
   margin: 1em 0 !important;
 }
 
-.t2 table th,
-.t2 table td {
-  width: 50%;
-  padding: 0.25em;
-}
-
-.t3 table th,
-.t3 table td {
-  width: 33%;
-  padding: 0.25em;
-}
-
-.t4 table th,
-.t4 table td {
-  width: 25%;
-  padding: 0.25em;
-}
-
 .t1_3 th:first-child,
 .t1_3 td:first-child {
-  writing-mode: vertical-rl; /* Vertical writing mode, right-to-left */
-  text-orientation: mixed; /* Mixed orientation, for better compatibility */
-  transform: rotate(180deg); /* Rotate text 180 degrees to make it upright */
-  white-space: nowrap; /* Prevent text from wrapping */
-  padding: 0.25em;
-  width: 2em; /* Let the first column adjust to fit the content */
-}
-
-.t1_3 th:not(:first-child),
-.t1_3 td:not(:first-child) {
-  width: calc((100% - 0px) / 3); /* Divide the remaining width by 3 for the other columns */
-  padding: 0.25em;
+  width: 2em;
+  white-space: nowrap;
 }
 </style>
 
@@ -59,25 +36,21 @@ td figure {
 
 A path tracer is a rendering technique that simulates the behavior of light in a scene. It uses Monte Carlo method to estimate the radiance at each pixel of an image by tracing the path of light through the scene. The algorithm is iterative and parallel in nature, so it runs intuitively and fairly well on CUDA. And it is able to simulate many effects that are difficult with other rendering techniques, such as soft shadows, depth of field, caustics, ambient occlusion, and indirect lighting.
 
-{{< gallery >}}
-  <img src="img/085-coffee.2023-10-12_05-41-53z.1000samp.png" class="grid-w50 rounded-md" />
-  <img src="img/stanford-bunny.2023-10-11_16-37-58z.1000samp.png" class="grid-w50 rounded-md" />
-  <img src="img/cow.2023-10-07_12-21-39z.1000samp.png" class="grid-w50 rounded-md" />
-  <img src="img/gear.2023-10-12_06-02-45z.1000samp.png" class="grid-w50 rounded-md" />
-{{< /gallery >}}
+|||
+| :---------: | :------------: |
+| **Coffee Shop** | **Stanford Bunny** |
+| ![](img/085-coffee.2023-10-12_05-41-53z.1000samp.png) | ![](img/stanford-bunny.2023-10-11_16-37-58z.1000samp.png) |
+| **Cow** | **Gear** |
+| ![](img/cow.2023-10-07_12-21-39z.1000samp.png) | ![](img/gear.2023-10-12_06-02-45z.1000samp.png) |
 
 
 All the above scenes were rendered in 2000x2000 resolution with 1000 samples per pixel and 8 light bounces.
 
 And we also have an interesting mirror scene, where a glossy sphere is placed in a cube with all sides mirrors, rendered in 2000x2000 resolution with 200 samples per pixel and with different number of light bounces.
 
-<div class="t3">
-
 | 1 Bounce | 8 Bounces | 64 Bounces |
 | :------: | :-------: | :--------: |
 | ![](img/mirrors.2023-10-12_09-33-26z.200samp.png) | ![](img/mirrors.2023-10-12_09-34-11z.200samp.png) | ![](img/mirrors.2023-10-12_09-35-19z.200samp.png) |
-
-</div>
 
 ## Visual Features
 
@@ -97,35 +70,54 @@ Material system is adopted from [glTF Specification](https://registry.khronos.or
 
 Using the `metallic` and `roughness` parameter, the material can be either dielectric or metal, and its reflection model can be either diffuse or specular. In addition with multiple importance sampling, the path tracer is able to render imperfect specular materials and produce better roughness effect. Also, by controlling the `ior` and `opacity` of dielectrics, the material can produce glass-like refraction with fresnel effect.
 
-<div id="test" class="t1_3" >
+<!-- <table class="t1_3">
+  <tr>
+    <th></th>
+    <th>Diffuse</th>
+    <th>Imperfect Specular</th>
+    <th>Pure Specular</th>
+  </tr>
+  <tr>
+    <th class="-rotate-90">Dielectric</th>
+    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-04-31z.2000samp.png" alt="Dielectric Diffuse" /></td>
+    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-11-43z.2000samp.png" alt="Dielectric Imperfect Specular" /></td>
+    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-05-52z.2000samp.png" alt="Dielectric Pure Specular" /></td>
+  </tr>
+  <tr>
+    <th class="-rotate-90">Metal</th>
+    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-21-21z.2000samp.png" alt="Metal Diffuse" /></td>
+    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-17-32z.2000samp.png" alt="Metal Imperfect Specular" /></td>
+    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-23-53z.2000samp.png" alt="Metal Pure Specular" /></td>
+  </tr>
+  <tr>
+    <th class="-rotate-90">Glass</th>
+    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_01-07-37z.2000samp.png" alt="Glass Diffuse" /></td>
+    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-55-54z.2000samp.png" alt="Glass Imperfect Specular" /></td>
+    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-47-47z.2000samp.png" alt="Glass Pure Specular" /></td>
+  </tr>
+</table> -->
+
+<div class="t1_3">
 
 || Diffuse | Imperfect Specular | Pure Specular |
-|:-:| :----------: | :-----------: | :----------------: |
-|**Dielectric**| ![](img/cornell.2023-10-12_00-04-31z.2000samp.png) | ![](img/cornell.2023-10-12_00-11-43z.2000samp.png) | ![](img/cornell.2023-10-12_00-05-52z.2000samp.png) |
-|**Metal**| ![](img/cornell.2023-10-12_00-21-21z.2000samp.png) | ![](img/cornell.2023-10-12_00-17-32z.2000samp.png) | ![](img/cornell.2023-10-12_00-23-53z.2000samp.png) |
-|**Glass**| ![](img/cornell.2023-10-12_01-07-37z.2000samp.png) | ![](img/cornell.2023-10-12_00-55-54z.2000samp.png) | ![](img/cornell.2023-10-12_00-47-47z.2000samp.png) |
+|:-| :----------: | :-----------: | :----------------: |
+|<p class="-rotate-90 m-0 w-32 text-center -translate-x-14">**Dielectric**</p>| ![](img/cornell.2023-10-12_00-04-31z.2000samp.png) | ![](img/cornell.2023-10-12_00-11-43z.2000samp.png) | ![](img/cornell.2023-10-12_00-05-52z.2000samp.png) |
+|<p class="-rotate-90 m-0 w-32 text-center -translate-x-14">**Metal**</p>| ![](img/cornell.2023-10-12_00-21-21z.2000samp.png) | ![](img/cornell.2023-10-12_00-17-32z.2000samp.png) | ![](img/cornell.2023-10-12_00-23-53z.2000samp.png) |
+|<p class="-rotate-90 m-0 w-32 text-center -translate-x-14">**Glass**</p>| ![](img/cornell.2023-10-12_01-07-37z.2000samp.png) | ![](img/cornell.2023-10-12_00-55-54z.2000samp.png) | ![](img/cornell.2023-10-12_00-47-47z.2000samp.png) |
 
 </div>
 
 Use the material system, we can mimic many real-world materials. For example, we have the following materials like aluminum, titanium, stainless steel, and different glasses.
 
-<div class="t2">
-
 | More of Metal | More of Glass |
 | :----: | :---: |
 | ![](img/cornell-metal.2023-10-12_01-18-06z.2000samp.png) | ![](img/cornell-glass.2023-10-12_01-14-29z.2000samp.png) |
 
-</div>
-
 And many Suzanne
-
-<div class="t4">
 
 | Glass | Aluminum | Yellow Plastic | Stainless Steel |
 | :----: | :---: | :---: | :---: |
 | ![](img/suzanne.2023-10-05_10-13-29z.2000samp.png) | ![](img/suzanne.2023-10-05_10-16-08z.2000samp.png) | ![](img/suzanne.2023-10-05_10-48-35z.2000samp.png) | ![](img/suzanne.2023-10-05_10-49-59z.2000samp.png) |
-
-</div>
 
 All scenes were rendered in 800x800 resolution with 2000 spp and 8 light bounces.
 
@@ -133,13 +125,9 @@ All scenes were rendered in 800x800 resolution with 2000 spp and 8 light bounces
 
 Anti-aliasing can be achieved by jittering rays within a pixel. In the following example, the image is rendered in low resolution to exaggerate the effect.
 
-<div class="t2">
-
 | AA OFF | AA ON |
 | :----: | :---: |
 | ![](img/aa.2023-10-11_23-07-26z.2000samp.png) | ![](img/aa.2023-10-11_23-08-21z.2000samp.png) |
-
-</div>
 
 All scenes were rendered in 200x200 (up-sampled to 800x800) resolution with 2000 spp and 8 light bounces.
 
@@ -147,13 +135,9 @@ All scenes were rendered in 200x200 (up-sampled to 800x800) resolution with 2000
 
 Depth-of-field can be achieved by jittering rays within an aperture. In the following example, the aperture is modeled as a circle with a radius of 0.5 and the focal length is 10.
 
-<div class="t2">
-
 | DoF OFF | DoF ON |
 | :-----: | :----: |
 | ![](img/dof.2023-10-11_17-23-28z.2000samp.png) | ![](img/dof.2023-10-11_17-22-50z.2000samp.png) |
-
-</div>
 
 All scenes were rendered in 800x800 resolution with 2000 spp and 8 light bounces.
 
@@ -165,13 +149,9 @@ With the help of [tinyobjloader](https://github.com/syoyo/tinyobjloader) and [ti
 
 Procedural textures can be achieved by using the barycentric interpolated uv coordinate of the intersection point. There is hardly any performance impact. Check out the following example.
 
-<div class="t2">
-
 | Gradient Mario | Checkerboard Mario |
 | :-----: | :----: |
 | ![](img/wahoo.2023-10-12_01-32-39z.1000samp.png) | ![](img/wahoo.2023-10-12_01-35-52z.1000samp.png) |
-
-</div>
 
 All scenes were rendered in 800x800 resolution with 1000 spp and 8 light bounces.
 
@@ -187,13 +167,9 @@ Although it does have a small impact on the performance, the quality of the imag
 
 The following example shows the effect of the denoiser with 200 samples per pixel, a relatively low sample rate.
 
-<div class="t2">
-
 | Denoiser OFF | Denoiser ON |
 | :----------: | :---------: |
 | ![](img/teapot.2023-10-12_03-02-07z.200samp.png) | ![](img/teapot.2023-10-12_03-00-19z.200samp.png) |
-
-</div>
 
 All scenes were rendered in 800x800 resolution with 200 spp and 8 light bounces.
 
