@@ -10,11 +10,10 @@ showHeadingAnchors : false
 showReadingTime : false
 # showTaxonomies : false
 showWordCount : false
-# showSummary : false
 showTableOfContents : false
 ---
 
-<!-- ## Skills -->
+My name is Zhenzhong Tang. I am a CS master’s student at the University of Pennsylvania. With two software engineer internships at Western Digital and Amazon, I gained experience working with large-scale latency-sensitive distributed systems, and performance optimization. I have also worked as ML undergrad research assistant, and had practical cloud-native system admin experience with Docker and Kubernetes on my VPS and home server. I am a quick learner and good at putting skills into practice.
 
 ## Work Experience
 

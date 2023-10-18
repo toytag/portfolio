@@ -2,8 +2,6 @@
 title: "Path Tracer: Physically Based Rendering"
 date: 2023-10-12T11:00:36-04:00
 tags: ["cuda", "parallel computing", "physically based rendering", "ray tracing"]
-
-showSummary: false
 ---
 
 <style>
@@ -37,7 +35,7 @@ td figure {
 A path tracer is a rendering technique that simulates the behavior of light in a scene. It uses Monte Carlo method to estimate the radiance at each pixel of an image by tracing the path of light through the scene. The algorithm is iterative and parallel in nature, so it runs intuitively and fairly well on CUDA. And it is able to simulate many effects that are difficult with other rendering techniques, such as soft shadows, depth of field, caustics, ambient occlusion, and indirect lighting.
 
 |||
-| :---------: | :------------: |
+| :-: | :-: |
 | **Coffee Shop** | **Stanford Bunny** |
 | ![](img/085-coffee.2023-10-12_05-41-53z.1000samp.png) | ![](img/stanford-bunny.2023-10-11_16-37-58z.1000samp.png) |
 | **Cow** | **Gear** |

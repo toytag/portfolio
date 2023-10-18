@@ -71,7 +71,6 @@ smartTOCHideUnfocusedChildren = false
   showTaxonomies = true
   showAuthorsBadges = true
   showWordCount = true
-  showSummary = true
   sharingLinks = [
     "email",
     "facebook",

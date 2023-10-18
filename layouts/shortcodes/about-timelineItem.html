@@ -11,15 +11,25 @@
     <div class="block p-6 rounded-lg shadow-2xl min-w-full ml-6 mb-10 backdrop-blur">
       <div class="flex flex-wrap justify-between">
         {{ if eq $header "amazon" }}
-        <img src="logos/amazon.svg" class="w-full max-w-[189px] mt-2 mb-6 pr-4 nozoom" />
+        <div class="dark:bg-neutral p-4 rounded-lg mb-6">
+          <img src="logos/amazon.svg" class="w-full max-w-[189px] m-0 nozoom" />
+        </div>
         {{ else if eq $header "western_digital" }}
-        <img src="logos/western_digital.svg" class="w-full max-w-[343px] mt-2 mb-6 mr-4 nozoom" />
+        <div class="dark:bg-neutral p-4 rounded-lg mb-6">
+          <img src="logos/western_digital.svg" class="w-full max-w-[343px] m-0 nozoom" />
+        </div>
         {{ else if eq $header "upenn" }}
-        <img src="logos/upenn.png" class="w-full max-w-[263px] mt-2 mb-6 pr-2 mr-2 nozoom" />
+        <div class="dark:bg-neutral p-4 rounded-lg mb-6">
+          <img src="logos/upenn.png" class="w-full max-w-[263px] m-0 nozoom" />
+        </div>
         {{ else if eq $header "shanghaitech" }}
-        <img src="logos/shanghaitech.svg" class="w-full max-w-[286px] mt-2 mb-6 mr-4 nozoom" />
+        <div class="dark:bg-neutral p-4 rounded-lg mb-6">
+          <img src="logos/shanghaitech.svg" class="w-full max-w-[286px] m-0 nozoom" />
+        </div>
         {{ else if eq $header "ucberkeley" }}
-        <img src="logos/ucberkeley.png" class="w-full max-w-[298px] mt-2 mb-6 mr-4 nozoom" />
+        <div class="dark:bg-neutral p-4 rounded-lg mb-6">
+          <img src="logos/ucberkeley.png" class="w-full max-w-[298px] m-0 nozoom" />
+        </div>
         {{ else }}
         <h2 class="mt-0">
           {{ $header }}
