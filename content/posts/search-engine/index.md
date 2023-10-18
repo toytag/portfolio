@@ -89,7 +89,7 @@ Experimentally, we found that intra-domain links result in unreasonably high Pag
 ### Reduce
 Inputs to the reduce phase are an url and a summable PageRank value associated with this url provided from its inbound urls in the Map phase. The Reduce phase sums those values up and produces the resulting PageRank value for the url. We incorporated a damping factor to address sinks:
 
-$$ \text{PageRank}^{(i)}(x) = \alpha \sum_{j \in B(x)} \frac{1}{N_j} \text{PageRank}^{(i-1)}(j) + \beta
+$$ \text{PR}^{(i)}(x) = \alpha \sum_{j \in B(x)} \frac{1}{N_j} \text{PR}^{(i-1)}(j) + \beta
  $$
 
 where the summation term is the sum described earlier, \\(\alpha = 0.85\\) is the damping factor, and \\(\beta = 0.15\\) is a constant.
