@@ -29,7 +29,7 @@ showTableOfContents : false
 
 {{< /timeline >}}
 
-## Education
+## 教育经历
 
 {{< timeline >}}
 

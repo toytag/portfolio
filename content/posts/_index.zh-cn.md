@@ -1,5 +1,5 @@
 ---
-title: "Posts"
+title: "博客"
 
 cascade:
   showSummary: false
@@ -14,8 +14,4 @@ cascade:
   # showWordCount : false
 ---
 
-{{< lead >}}
-大杂烩
-{{< /lead >}}
-
-*Just like a kaleidoscope, each click will reveal a new facet of my interests. Join me as I embrace the diversity of life's experiences, inviting you to see the world through my eyes and engage in discussions that resonate with the curious soul in you.*
+*大杂烩之随心所欲的写点*
