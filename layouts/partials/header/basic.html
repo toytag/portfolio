@@ -5,7 +5,7 @@
     {{ if $logo }}
     <div>
         <a href="{{ "" | relLangURL }}" class="flex">
-            <span class="sr-only">{{ .Site.Title | markdownify | emojify }}</span>
+            <span class="sr-only"><code>{{ .Site.Title | markdownify | emojify }}</code></span>
 
             <img src="{{ $logo.RelPermalink }}" width="{{ div $logo.Width 2 }}" height="{{ div $logo.Height 2 }}"
                 class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="{{ .Site.Title }}" />
@@ -18,9 +18,9 @@
         <nav class="flex space-x-3">
 
             {{ if not .Site.Params.disableTextInHeader | default true }}
-            <a href="{{ "" | relLangURL }}" class="text-base font-medium text-gray-500 hover:text-gray-900">{{
-                .Site.Title | markdownify
-                | emojify }}</a>
+            <a href="{{ "" | relLangURL }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
+                <code>{{ .Site.Title | markdownify | emojify }}</code>
+            </a>
             {{ end }}
 
         </nav>
