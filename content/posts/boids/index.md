@@ -6,11 +6,7 @@ tags: ["cuda", "parallel computing"]
 
 {{< katex >}}
 
-<!-- ![](img/demo.gif "Tested on: Windows 11 Pro 22H2, AMD EPYC 7V12 64-Core Processor (4 vCPU cores) @ 2.44GHz 28GiB, Tesla T4 16GiB (Azure)") -->
-<figure>
-<img src="img/demo.gif" class="w-full rounded-md" loading="lazy" />
-<figcaption>Tested on: Windows 11 Pro 22H2, AMD EPYC 7V12 64-Core Processor (4 vCPU cores) @ 2.44GHz 28GiB, Tesla T4 16GiB (Azure)</figcaption>
-</figure>
+![](img/demo.gif "Tested on: Windows 11 Pro 22H2, AMD EPYC 7V12 64-Core Processor (4 vCPU cores) @ 2.44GHz 28GiB, Tesla T4 16GiB (Azure)")
 
 This is a CUDA-based coherent uniform grid search implementation of the [Boids](https://en.wikipedia.org/wiki/Boids) flocking simulation algorithm. The algorithm, developed by Craig Reynolds in 1986, simulates the flocking behavior of birds. The goal of this project is to implement the algorithm with CUDA in different ways and optimize performance.
 
@@ -32,17 +28,14 @@ To avoid checking every other boids in the simulation, we can use a uniform grid
 
 <img src="img/Boids-Ugrid-base.jpg" class="inline grid-w50" loading="lazy" /> <img src="img/Boids-Ugrid-mark.jpg" class="inline grid-w50" loading="lazy" />
 
-<!-- ![](img/scattered-impl.jpg) -->
-<img src="img/scattered-impl.jpg" class="rounded-md" loading="lazy" />
+![](img/scattered-impl.jpg)
 
 The images show a simplified version in 2D plane, with grid cell width equals to 2 times the maximum search radius. Each boids would only need to check at most 4 neighbor cells (or in 3D case, 8 neighbor cells). This significantly reduces the number of global memory access.
 
 ### Coherent Grid Search
 
-<!-- ![](img/coherent-mem.png) -->
-<img src="img/coherent-mem.png" class="rounded-md" loading="lazy" />
-<!-- ![](img/coherent-impl.jpg) -->
-<img src="img/coherent-impl.jpg" class="rounded-md" loading="lazy" />
+![](img/coherent-mem.png)
+![](img/coherent-impl.jpg)
 
 We can store the sorted position and velocity of boids based on cell indexes, so that boids data are contiguous in memory from the perspective of grid cells. The specific implementation eliminates an overhead associated with fetching a pointer index from global memory to access the position and velocity of boids in global memory. Interestingly, one parallelizing sort is considerably faster than the cost of random fetches of global memory. Also, ***coalesced*** memory access benefits more from cache and compiler optimizations.
 
@@ -52,10 +45,8 @@ We can use average Frames Per Second (FPS) to compare the performance of differe
 
 ### Number of Boids
 
-<!-- ![](img/FPS%20with%20Visualization%20ON.svg) -->
-<img src="img/FPS%20with%20Visualization%20ON.svg" class="rounded-md" loading="lazy" />
-<!-- ![](img/FPS%20with%20Visualization%20OFF.svg) -->
-<img src="img/FPS%20with%20Visualization%20OFF.svg" class="rounded-md" loading="lazy" />
+![](img/FPS%20with%20Visualization%20ON.svg)
+![](img/FPS%20with%20Visualization%20OFF.svg)
 
 We see the performance of naive implementation is worse than grid searches. The coherent grid search implementation is the fastest, with a 3x speedup compared to the naive implementation with 5,000 boids. With more boids, we see more significant speedup. The coherent grid search is even 10x faster than the scattered grid search in 500,000 and 1,000,000 boids tests.
 
@@ -63,31 +54,26 @@ Though with visualization on, the peek performance of the coherent grid search i
 
 ### CUDA Block Size
 
-<!-- ![](img/FPS%20with%205,000%20Boids%20and%20Visualization%20OFF.svg) -->
-<img src="img/FPS%20with%205,000%20Boids%20and%20Visualization%20OFF.svg" class="rounded-md" loading="lazy" />
+![](img/FPS%20with%205,000%20Boids%20and%20Visualization%20OFF.svg)
 
 Selecting an appropriate block size is crucial to effectively utilize the available resources on the GPU, ensuring that all Streaming Multiprocessors (SMs) are actively engaged, and there are enough warps to hide memory access latencies. But in our tests, we didn't see significant difference in performance with different block sizes. All there implementation tend to perform a bit worse when block size is too large, like 1024, or too small, like 16.
 
 ### Fine-Grained Cells, 8 v.s. 27 Neighbors
 
-<!-- ![](img/FPS%20with%20Visualization%20OFF,%208%20Grids%20v.s.%2027%20Grids%20Search.svg) -->
-<img src="img/FPS%20with%20Visualization%20OFF,%208%20Grids%20v.s.%2027%20Grids%20Search.svg" class="rounded-md" loading="lazy" />
+![](img/FPS%20with%20Visualization%20OFF,%208%20Grids%20v.s.%2027%20Grids%20Search.svg)
 
 We see even more improved results when we set the grid cell width to 1 times the maximum search radius, so that each boid would need to check at most 27 neighbor cells. With fine-grained search, the coherent grid search is more than 5x faster than the 8-cell coherent grid search in 500,000 and 1,000,000 boids tests. This is huge improvement. To put it more intuitively, see the stacked comparison.
 
-<!-- ![](img/FPS%20with%20Visualization%20OFF,%208%20Grids%20v.s.%2027%20Grids%20Search,%20Stacked.svg) -->
-<img src="img/FPS%20with%20Visualization%20OFF,%208%20Grids%20v.s.%2027%20Grids%20Search,%20Stacked.svg" class="rounded-md" loading="lazy" />
+![](img/FPS%20with%20Visualization%20OFF,%208%20Grids%20v.s.%2027%20Grids%20Search,%20Stacked.svg)
 
 27-cell coherent grid search in 500,000 and 1,000,000 tests is dominating the others.
 
 ### Profiling
 1. **Scattered Grid Search v.s. Coherent Grid Search**: Current(blue) is the coherent grid search, and baseline(green) is the scattered grid search.
-<!-- ![](img/scattered-coherent.png) -->
-<img src="img/scattered-coherent.png" class="rounded-md" loading="lazy" />
+![](img/scattered-coherent.png)
 
 2. **27-cell Coherent Grid Search and 8-cell Coherent Grid Search**: Current(blue) is the 27-cell coherent grid search, and baseline(green) is the 8-cell coherent grid search.
-<!-- ![](img/coherent-8-27.png) -->
-<img src="img/coherent-8-27.png" class="rounded-md" loading="lazy" />
+![](img/coherent-8-27.png)
 
 ## Q&A
 

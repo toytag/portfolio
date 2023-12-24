@@ -133,7 +133,7 @@ In the end, we get a smooth path with consistent velocity. We were able to draw 
 {{< /gallery >}}
 
 ## Just Chillin'
-![logo](logo.png "The Logo I Designed for RoboArt :grinning_face_with_sweat:")
+![logo](img/logo.png "The Logo I Designed for RoboArt :grinning_face_with_sweat:")
 
 {{< github repo="Ten1o/EE106A-RoboArt" >}}
 <br>

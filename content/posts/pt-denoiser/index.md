@@ -40,7 +40,7 @@ A path tracing denoiser that uses geometry buffers (G-buffers) to guide a smooth
 
 The denoise filter is based on the paper ["Edge-Avoiding A-Trous Wavelet Transform for fast Global Illumination Filtering," by Dammertz, Sewtz, Hanika, and Lensch](https://jo.dreggn.org/home/2010_atrous.pdf).
 
-![](img/pipeline.png "rt), n) and x) are the input buffers(Ray Tracing, Normal, World Space Position). 1), 2)show 2 levels of edge-avoiding À-Trous filter. f)is the final output image after tone mapping. d)shows the optional diffuse buffer. Image from paper.")
+![](img/pipeline.webp "rt), n) and x) are the input buffers(Ray Tracing, Normal, World Space Position). 1), 2)show 2 levels of edge-avoiding À-Trous filter. f)is the final output image after tone mapping. d)shows the optional diffuse buffer. Image from paper.")
 
 ### Filter
 
@@ -77,7 +77,7 @@ Default Cornell scene with 10 samples per pixel, 800x800 resolution, 8 light bou
 
 | Original | 80x80 Filter | Reference (1000 iterations) |
 |:--:|:--:|:--:|
-|![](img/bunny_original.png)|![](img/bunny_80x80.png)|![](img/bunny_reference.png)|
+|![](img/bunny_original.webp)|![](img/bunny_80x80.png)|![](img/bunny_reference.png)|
 
 Slightly more complex Stanford Bunny scene with 10 samples per pixel, 800x800 resolution, 8 light bounces per sample.
 
@@ -89,8 +89,7 @@ We have implemented the denoiser in CUDA, and applied some memory footprint opti
 
 The following graph compares the influence of filter size and image resolution on our denoising filters. It is tested on the stanford bunny scene with 10 samples per pixel, 800x800 resolution, 8 light bounces per sample.
 
-<!-- ![](img/filter_size_cmp.svg) -->
-<img src="img/filter_size_cmp.svg" class="rounded-md" />
+![](img/filter_size_cmp.svg)
 
 From the comparison above, we can see that as the filter size doubles, the average runtime increases by approximately the runtime of one iteration of the filter. This is expected, as the a-trous filter is applied iteratively, and the runtime of each iteration is approximately the same. We can see the trend lines are also linear.
 
@@ -98,8 +97,7 @@ Our filter is heavily memory bound, meaning that by limiting the memory footprin
 
 The next graph compares the influence of image resolution on our denoising filters. It is also tested on the stanford bunny scene with 10 samples per pixel, 80x80 filter size, 8 light bounces per sample.
 
-<!-- ![](img/resolution_cmp.svg) -->
-<img src="img/resolution_cmp.svg" class="rounded-md" />
+![](img/resolution_cmp.svg)
 
 There runtime is proportional to the number of pixels in the image. Since the resolution is increasing exponentially, the trend line is also exponential. With more heavy global memory access, G-buffer optimization is more effective.
 
@@ -113,7 +111,7 @@ We also have detail results for the filters with different sizes in different sc
 
 | Original | 5x5 Filter | 10x10 Filter |
 |:--:|:--:|:--:|
-|![](img/bunny_original.png)|![](img/bunny_5x5.png)|![](img/bunny_10x10.png)|
+|![](img/bunny_original.webp)|![](img/bunny_5x5.webp)|![](img/bunny_10x10.png)|
 | **20x20 Filter** | **40x40 Filter** | **80x80 Filter** |
 |![](img/bunny_20x20.png)|![](img/bunny_40x40.png)|![](img/bunny_80x80.png)|
 

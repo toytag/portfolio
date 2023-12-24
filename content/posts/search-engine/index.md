@@ -130,10 +130,7 @@ The key of the map is the query term and the value is the JSON string. Whenever 
 
 ### User Interface
 
-<figure>
-<img src="img/poogle.svg" >
-<figcaption>From Google to Poogle (a little too similar perhaps)</figcaption>
-</figure>
+![](img/poogle.svg "From Google to Poogle (a little too similar perhaps)")
 
 We develop the user interface as a replication of Google search engine using React.js. The frontend communicates with the backend through `/search`. We are able to display the url link, a snippet of the web page as well as the first image on the web page as search results. As mentioned before, we are able to display the top 50 results for a single query.
 

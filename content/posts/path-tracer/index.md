@@ -30,7 +30,7 @@ td figure {
 
 {{< katex >}}
 
-![](img/gallery.png "Tested on: Windows 11 Pro 22H2, AMD EPYC 7V12 64-Core Processor (4 vCPU cores) @ 2.44GHz 28GiB, Tesla T4 16GiB (Azure)")
+![](img/gallery.webp "Tested on: Windows 11 Pro 22H2, AMD EPYC 7V12 64-Core Processor (4 vCPU cores) @ 2.44GHz 28GiB, Tesla T4 16GiB (Azure)")
 
 ## Introduction
 
@@ -39,9 +39,9 @@ A path tracer is a rendering technique that simulates the behavior of light in a
 |||
 | :-: | :-: |
 | **Coffee Shop** | **Stanford Bunny** |
-| ![](img/085-coffee.2023-10-12_05-41-53z.1000samp.png) | ![](img/stanford-bunny.2023-10-11_16-37-58z.1000samp.png) |
+| ![](img/085-coffee.2023-10-12_05-41-53z.1000samp.png) | ![](img/stanford-bunny.2023-10-11_16-37-58z.1000samp.webp) |
 | **Cow** | **Gear** |
-| ![](img/cow.2023-10-07_12-21-39z.1000samp.png) | ![](img/gear.2023-10-12_06-02-45z.1000samp.png) |
+| ![](img/cow.2023-10-07_12-21-39z.1000samp.webp) | ![](img/gear.2023-10-12_06-02-45z.1000samp.webp) |
 
 
 All the above scenes were rendered in 2000x2000 resolution with 1000 samples per pixel and 8 light bounces.
@@ -50,14 +50,13 @@ And we also have an interesting mirror scene, where a glossy sphere is placed in
 
 | 1 Bounce | 8 Bounces | 64 Bounces |
 | :------: | :-------: | :--------: |
-| ![](img/mirrors.2023-10-12_09-33-26z.200samp.png) | ![](img/mirrors.2023-10-12_09-34-11z.200samp.png) | ![](img/mirrors.2023-10-12_09-35-19z.200samp.png) |
+| ![](img/mirrors.2023-10-12_09-33-26z.200samp.png) | ![](img/mirrors.2023-10-12_09-34-11z.200samp.png) | ![](img/mirrors.2023-10-12_09-35-19z.200samp.webp) |
 
 ## Visual Features
 
 ### Material System
 
-<!-- ![](img/materials.svg) -->
-<img src="img/materials.svg" class="rounded-md" />
+![](img/materials.svg)
 
 Material system is adopted from [glTF Specification](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#appendix-b-brdf-implementation).
 
@@ -69,33 +68,6 @@ Material system is adopted from [glTF Specification](https://registry.khronos.or
 - **Emittance**: The emittance of the material. A value of `0` means the material is not emissive, and a value greater than `0` means the material is emissive, controlling the brightness of the material.
 
 Using the `metallic` and `roughness` parameter, the material can be either dielectric or metal, and its reflection model can be either diffuse or specular. In addition with multiple importance sampling, the path tracer is able to render imperfect specular materials and produce better roughness effect. Also, by controlling the `ior` and `opacity` of dielectrics, the material can produce glass-like refraction with fresnel effect.
-
-<!-- <table class="t1_3">
-  <tr>
-    <th></th>
-    <th>Diffuse</th>
-    <th>Imperfect Specular</th>
-    <th>Pure Specular</th>
-  </tr>
-  <tr>
-    <th class="-rotate-90">Dielectric</th>
-    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-04-31z.2000samp.png" alt="Dielectric Diffuse" /></td>
-    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-11-43z.2000samp.png" alt="Dielectric Imperfect Specular" /></td>
-    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-05-52z.2000samp.png" alt="Dielectric Pure Specular" /></td>
-  </tr>
-  <tr>
-    <th class="-rotate-90">Metal</th>
-    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-21-21z.2000samp.png" alt="Metal Diffuse" /></td>
-    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-17-32z.2000samp.png" alt="Metal Imperfect Specular" /></td>
-    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-23-53z.2000samp.png" alt="Metal Pure Specular" /></td>
-  </tr>
-  <tr>
-    <th class="-rotate-90">Glass</th>
-    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_01-07-37z.2000samp.png" alt="Glass Diffuse" /></td>
-    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-55-54z.2000samp.png" alt="Glass Imperfect Specular" /></td>
-    <td><img class="my-2 rounded-md" src="img/cornell.2023-10-12_00-47-47z.2000samp.png" alt="Glass Pure Specular" /></td>
-  </tr>
-</table> -->
 
 <div class="t1_3">
 
@@ -193,8 +165,7 @@ Additionally, we could sort the rays by material type to improve the performance
 
 Bounding volume hierarchy (BVH) is a tree structure on top of the scene geometry to accelerate ray tracing. The idea is to group the scene geometry into a hierarchy of bounding volumes, and the ray tracer can quickly discard the entire group of primitives if the ray does not intersect with the bounding volume.
 
-<!-- ![](img/bvh.svg) -->
-<img src="img/bvh.svg" class="rounded-md" />
+![](img/bvh.svg)
 
 Image from [PBRT 4.3](https://pbr-book.org/3ed-2018/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies) is a good illustration of BVH true. The BVH is built using the equal count partition method, which tries to split the primitives into two equal count groups. The BVH is built on the CPU in a linear buffer (heap like structure) and then copied to the GPU for ray tracing. BVH could be potentially optimized by utilizing SAH (Surface Area Heuristic) and building the BVH directly on the GPU.
 
@@ -202,8 +173,7 @@ Image from [PBRT 4.3](https://pbr-book.org/3ed-2018/Primitives_and_Intersection_
 
 Let's take a look at the performance of the path tracer with different features enabled. Stream compaction plays a important role in the correctness of the algorithm in addition to its performance benefits. So stream compaction will be enabled in all tests and we will use path tracer with only stream compaction method enabled as the baseline.
 
-<!-- ![](img/Average%20Frame%20Generation%20Time%20Comparison%20(Lower%20is%20Better).svg) -->
-<img src="img/Average%20Frame%20Generation%20Time%20Comparison%20(Lower%20is%20Better).svg" class="rounded-md" />
+![](img/Average%20Frame%20Generation%20Time%20Comparison%20(Lower%20is%20Better).svg)
 
 Cornell-Metal and Cornell-Glass are simple scenes with metal or glass material balls in side the cornell box. Those spheres is not in the mesh system therefore BVH has no effect on the performance.
 

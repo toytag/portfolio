@@ -13,16 +13,11 @@ table {
 
 </style>
 
-<!-- ![](img/demo.gif "This project is a grass rendering system in Vulkan, based on the technique described in the paper [Responsive Real-Time Grass Rendering for General 3D Scenes](https://www.cg.tuwien.ac.at/research/publications/2017/JAHRMANN-2017-RRTG/JAHRMANN-2017-RRTG-draft.pdf).") -->
-<figure>
-<img src="img/demo.gif" class="w-full rounded-md" loading="lazy">
-<figcaption>This project is a grass rendering system in Vulkan, based on the technique described in the paper <a href="https://www.cg.tuwien.ac.at/research/publications/2017/JAHRMANN-2017-RRTG/JAHRMANN-2017-RRTG-draft.pdf">Responsive Real-Time Grass Rendering for General 3D Scenes</a>.</figcaption>
-</figure>
+![](img/demo.gif "This project is a grass rendering system in Vulkan, based on the technique described in the paper [Responsive Real-Time Grass Rendering for General 3D Scenes](https://www.cg.tuwien.ac.at/research/publications/2017/JAHRMANN-2017-RRTG/JAHRMANN-2017-RRTG-draft.pdf).")
 
 ## Physical Model
 
-<!-- ![](img/blade_model.jpg) -->
-<img src="img/blade_model.jpg" class="rounded-md" loading="lazy">
+![](img/blade_model.jpg)
 
 We consider three different natural forces in our blade model: recovery, gravity and wind.
 
@@ -36,8 +31,7 @@ After applied all the forces, we also need to validate the new states of our bla
 
 | Static | Physically Simulated |
 | :-: | :-: |
-<!-- | ![](img/static.png) | ![](img/full.gif) | -->
-| <img src="img/static.png" class="rounded-md" loading="lazy"> | <img src="img/full.gif" class="rounded-md" loading="lazy"> |
+| ![](img/static.png) | ![](img/full.gif) |
 
 
 ## Culling
@@ -52,8 +46,7 @@ From the demo in the overview section, we can most easily see the effect of view
 
 | No Culling | Culling |
 | :-: | :-: |
-<!-- | ![](img/nocull.png) | ![](img/cull.png) | -->
-| <img src="img/nocull.png" class="rounded-md" loading="lazy"> | <img src="img/cull.png" class="rounded-md" loading="lazy"> |
+| ![](img/nocull.png) | ![](img/cull.png) |
 
 
 ## Performance Analysis
@@ -62,8 +55,7 @@ We mainly examine the performance of our grass rendering system with or without 
 
 We will use the average FPS from 10 seconds to measure the performance. Higher FPS means better performance.
 
-<!-- ![](img/FPS%20w.r.t%20Number%20of%20Blades%20and%20Culling,%20Higher%20is%20Better.svg) -->
-<img src="img/FPS%20w.r.t%20Number%20of%20Blades%20and%20Culling,%20Higher%20is%20Better.svg" class="rounded-md" loading="lazy" />
+![](img/FPS%20w.r.t%20Number%20of%20Blades%20and%20Culling,%20Higher%20is%20Better.svg)
 
 From the provided trend, it's evident that as the number of blades increases, the frame rate linearly declines, regardless of whether culling is enabled or not. This is because the number of blades is directly proportional to the number of draw calls, which should be the main bottleneck of our rendering system in the ranges of number of blades we tested.
 
