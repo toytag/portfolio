@@ -40,14 +40,14 @@ Our network design and training is based on three papers below:
 
 With tools as powerful as U-Net and FCN, the image segmentation is a relatively easy job. Since we don't want long training time and a huge model, LikeUnet is, well, like Unet, but with fewer convolution layers and kernels, and slightly deeper. Plus, it looks good. :winking_face:
 
-<img src="img/vision/likeunet.png" class="inline grid-w45" />
-<img src="img/vision/demo.gif" class="inline grid-w50" />
+<img src="img/vision/likeunet.png" class="inline grid-w45 rounded-md" loading="lazy" />
+<img src="img/vision/demo.gif" class="inline grid-w50 rounded-md" loading="lazy" />
 
 After most of the heavy work done by neural net, ***Haar Cascade Face Detection*** is used to locate the face, then crop and resize image to 256x256.
 
 With proper tunning, we can turn left image (source: [google](https://www.google.com/url?sa=i&rct=j&q=&esrc=simg/&source=images&cd=&ved=2ahUKEwjDtLH6r8bmAhVDuZ4KHZIEAQ0QjRx6BAgBEAQ&url=http%3A%2F%2Fgoogle.com%2Fsearch%3Ftbm%3Disch%26q%3DTom%2BHardy&psig=AOvVaw3vUDgangqeFT4B_rP0YeQb&ust=1577005104844476)) into right one.
 
-<img src="img/vision/original.png" class="inline grid-w30" /> \\(\to\\) <img src="img/vision/step1.png" class="inline grid-w35" />
+<img src="img/vision/original.png" class="inline grid-w30 rounded-md" loading="lazy" /> \\(\to\\) <img src="img/vision/step1.png" class="inline grid-w35 rounded-md" loading="lazy" />
 
 ### Canny Edge Detection
 
@@ -57,7 +57,7 @@ One downside about Canny detector is that you have to set the two thresholds, an
 
 After edge detection, we have lots of points like this:
 
-<img src="img/vision/step2.png" class="grid-w70" />
+<img src="img/vision/step2.png" class="grid-w70 rounded-md" loading="lazy" />
 
 ### Minimum Spanning Tree + Depth First Search
 
@@ -65,13 +65,17 @@ We use ***Prim's Algorithm*** to find the minimum spanning tree, for that we tre
 
 Once we have a tree, use ***Depth First Search*** to traverse all nodes and generate a PATH!
 
-<img src="img/vision/step3.png" class="grid-w70" />
+<img src="img/vision/step3.png" class="grid-w70 rounded-md" loading="lazy" />
 
 ### Ramer-Douglas-Peucker Downsampling
 
 Input parameters are a sequence of points, and the maximum tolerance \\(\epsilon\\) > 0.
 
-![rdp](img/vision/rdp.gif "RDP Downsampling Illustration, source: [Wikipedia](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm)")
+<!-- ![rdp](img/vision/rdp.gif "RDP Downsampling Illustration, source: [Wikipedia](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm)") -->
+<figure>
+<img src="img/vision/rdp.gif" class="rounded-md"  loading="lazy" />
+<figcaption>RDP Downsampling Illustration, source: <a href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm">Wikipedia</a></figcaption>
+</figure>
 
 Simply put, draw a line from start to end, find the point that is farthest from the line, if it's greater than \\(\epsilon\\), then keep it, otherwise discard it. Then recursively call the function with the first point and the farthest point, and the farthest point and the last point.
 
@@ -79,7 +83,7 @@ It may seem like a lot of work, but once you think "calculate points distance to
 
 See how the path is simplified:
 
-<img src="img/vision/step4.png" class="grid-w70" />
+<img src="img/vision/step4.png" class="grid-w70" loading="lazy" />
 
 Once we have the path, we can feed it to the control algorithm.
 
@@ -95,8 +99,8 @@ For this part, we have to design a transformation method, with which the positio
 2. Transform the Cartesian coordinate to polar coordinate. (Polar coordinate of Base frame)
 3. Transform the polar coordinate to the joints space. (Joint space)
 
-<img src="img/control/sawyer.png" class="inline grid-w45" />
-<img src="img/control/configuration.png" class="inline grid-w55" />
+<img src="img/control/sawyer.png" class="inline grid-w45 rounded-md" loading="lazy" />
+<img src="img/control/configuration.png" class="inline grid-w55 rounded-md" loading="lazy" />
 
 Since our task only needs to draw on a horizontal plan (the end of the gripper will stay in the plane orthogonal to z-axis), set the arm in the above gesture. Set joint_2, joint_4 and joint_6's angles always zero, which could cut down 3 degrees of freedom and save some calculation. Build a planar coordinate system to reflect the drawing plan. Using joint_1 as the origin of length, joint_0 as the origin of angle, construct a non-standard polar coordinate by which every position on the plane can be expressed. Obviously, set joint_0 = angle in polar coordinate, then use r and h to calculate other joints' angles.
 
@@ -110,7 +114,7 @@ we can solve \\(\alpha = 2\tan^{-1}(\cdot) \\) and \\(\beta = 2\tan^{-1}(\cdot)\
 
 ### Path Planning
 
-<img src="img/control/path.png" class="grid-w50" />
+<img src="img/control/path.png" class="grid-w50 rounded-md" loading="lazy" />
 
 1. For each two adjacent input feature points(key points), insert several points between them.
 2. Set a constant velocity in Cartesian coordinate.
@@ -123,9 +127,9 @@ In the end, we get a smooth path with consistent velocity. We were able to draw 
 ## Results
 
 {{< gallery >}}
-  <img src="img/results/1.jpeg" class="grid-w33" />
-  <img src="img/results/2.jpeg" class="grid-w33" />
-  <img src="img/results/3.jpeg" class="grid-w33" />
+  <img src="img/results/1.jpeg" class="grid-w33 rounded-md" loading="lazy" />
+  <img src="img/results/2.jpeg" class="grid-w33 rounded-md" loading="lazy" />
+  <img src="img/results/3.jpeg" class="grid-w33 rounded-md" loading="lazy" />
 {{< /gallery >}}
 
 ## Just Chillin'

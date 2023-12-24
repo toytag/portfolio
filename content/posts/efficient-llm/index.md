@@ -6,18 +6,96 @@ tags: ["cuda", "parallel computing"]
 
 {{< katex >}}
 
-The LLM (Large Language Model) Inference Engine is deployed at [llm.toytag.net](https://llm.toytag.net) as of 12/11/2023 and open to the public for one day. It consists of math and engineering tricks that make efficient hosting possible, and make the model aware of the latest info about this course (even this particular project). Feel free to try it out!
+The LLM (Large Language Model) Inference Engine is deployed at [llm.toytag.net](https://llm.toytag.net) as of 12/11/2023 and open to the public for one day. It consists of math and engineering tricks that make efficient hosting possible, and make the model aware of the latest info about CIS 565 GPU Programming course (even this particular project). Feel free to try it out!
 
-![LLM Inference Engine](img/llm_inference_engine.png)
+<!-- ![LLM Inference Engine](img/llm_inference_engine.png) -->
+<img src="img/llm_inference_engine.png" class="rounded-md" loading="lazy">
 
 The inference service runs on a single NVIDIA L4 Tensor Core GPU with 24 GiB VRAM that consumes less than 75W of power. The large language model is [Intel's Neural Chat](https://huggingface.co/Intel/neural-chat-7b-v3-1) model finetuned from [Mistral-7B](https://huggingface.co/mistralai/Mistral-7B-v0.1) base model with 7 billion parameters, which is also a GPT style language model. The service takes more than 20 GiB of VRAM, and ~7 billion is about the largest model we could run without any precision loss on this GPU.
 
 This repo contains our implementation of Flash Attention and its variants. The LLM inference service code is a fork from vLLM project with our **custom kernel**, **frontend**, and **docker build & compose rules** for hassle-free deployment. The service project is presented as a git submodule in the current repo, or you could directly visit [this link](https://github.com/toytag/vllm/tree/8e41936777ea375e4cd4f463249f0870bbb5f06a).
 
-## Introduction
-Large language models (LLMs) like ChatGPT or Llama have recently gained a lot of attention. However, operating them is still quite costly. The expense of generating a single response, which might be around $0.01 for a brief interaction using an 8xA100 instance on AWS at the moment, can become substantial when considering billions of users engaging in multiple interactions daily. Certain tasks, such as code auto-completion which activates with each new character typed, are particularly resource-intensive. As LLMs are increasingly employed in various applications, even minor improvements in generation efficiency can lead to significant overall cost reductions.
+## Faster! Faster! Faster!
 
-## Project Objective
+We start by showing the performance improvement and profiling, the most important part of this project. For a more detailed introduction to the project and LLM inference pipeline, please refer to the [Background](#background) section and thereafter.
+
+### First Token Latency
+
+<!-- ![](img/first_token_latency.svg) -->
+<figure>
+<img src="img/first_token_latency.svg" class="rounded-md" />
+<figcaption>The <span class="text-green-400">green</span> one is our most optimized version.</figcaption>
+</figure>
+
+Here we are testing the latency of the first token/word generation during LLM serving. The latency is measured (in milliseconds) from the time when the user send the generation request to the time when the first token is generated and send back to the user. The red bar is a similar-sized network package send to the service to measure the underlying network latency. The yellow bar is when the when we disable caching, and we are using the simple attention kernel. The blue bar is when we switch to the flash decoding kernel. And finally the green bar is when we enable caching. This cache is very similar to the "first bounce cache" in project3 when we implement the path tracer by reusing the previous intermediate results. Whether it is paged or not doesn't matter here.
+
+The network latency is negligible compared to the generation time. As the model size increases, the effect of caching decreases and the acceleration from flash decoding starts to shine. When the model size becomes too large, memory becomes the bottleneck so cache doesn't help much. However, flash decoding can decrease the memory access when calculating softmax, results in more significant speedup.
+
+### Throughput*
+
+> NOTE: Throughput involves a wide range of factors and can change significantly with different settings. The following results are only for reference.
+
+Throughput is measured by calculating the average number tokens generated per second over a long period of time. It is a end to end performance metric that involves a wide range of factors, including network latency, model, batching strategy, and lastly, the attention kernel. The red bar is throughput measured from HuggingFace, yellow is from Microsoft's DeepSpeed, blue and green is based on vLLM with different attention kernels.
+
+<!-- ![](img/inference_throughput.svg) -->
+<figure>
+<img src="img/inference_throughput.svg" class="rounded-md">
+<figcaption>The <span class="text-green-400">green</span> one is our most optimized version.</figcaption>
+</figure>
+
+As shown in the graph, the kernel alone doesn't have a significant impact on performance. But a general trend is that flash decoding is faster than base paged attention kernel. At least we know DeepSpeed have flash decoding attention and more optimization. Considering the effect of batching strategy and other tricks each framework implements, the kernel performance comparison is more evident when batch size is small, i.e. one. DeepSpeed does have better kernel implementation, but its "dynamic split-fuse" batching may cause overhead when the batch size is large and the context is short, resulting in its lower peak throughput than vLLM.
+
+In another setting, with Mistral-7B model, 32k context length, and dynamic batching, DeepSpeed take the lead and achieves 2x the performance of our custom vLLM.
+
+| Framework | Throughput (tokens/s) |
+| :-------: | :-------------------: |
+| vLLM (Base Kernel) | 1067 |
+| vLLM (Flash Decoding) | 1130 |
+| **DeepSpeed** | **2082** |
+
+HuggingFace failed to run the throughput tests in this setting possibly due to memory limitation and its poor caching strategy (memory fragmentation leading to much larger mem usage when inference). This finding is more evidence that the kernel is not the only factor that determines the performance of the inference service. The batching strategy, caching, and other tricks each framework implements also play a significant role.
+
+### Kernel Profiling
+
+In general, the optimized flash decoding kernel achieves better compute and memory throughput than the baseline attention kernel. Both kernels are optimized as much as possible, and NSight Compute doesn't show any shared memory bank conflicts in either kernel. Tiling matmul plus softmax using a few rounds of warp/block level reduction, is the most simple and efficient way to compute attention and avoid bank conflicts.
+
+Since flash decoding excels at small batch size and long context, we profile baseline attention and flash decoding used in inference service with a batch size of 1 and context length of 4096. The results are shown below, with **the baseline attention kernel being green and flash decoding kernel being blue**.
+
+<!-- ![](img/vllm_kern_profile_sol.png) -->
+<figure>
+<img src="img/vllm_kern_profile_sol.png" class="rounded-md" loading="lazy">
+<figcaption>The <span class="text-blue-400">blue</span> one is our most optimized version.</figcaption>
+</figure>
+
+Flash decoding gives us a 2x speedup in compute throughput and 50% speedup in memory throughput. A very exciting first insight!
+
+<!-- ![](img/vllm_kern_profile_compute.png) -->
+<figure>
+<img src="img/vllm_kern_profile_compute.png" class="rounded-md" loading="lazy">
+<figcaption>The <span class="text-blue-400">blue</span> one is our most optimized version.</figcaption>
+</figure>
+
+Our optimized version of flash decoding, when using half precision float point (FP16), tries to fuse 2 float point calculation in one instruction. And with a lot of fused multiply add (FMA) instructions, the kernel achieves much better compute throughput. We even have some inline PTX code that utilize the Tensor Core to do small matrix multiplication as evident in the compute workload analysis.
+
+<!-- ![](img/vllm_kern_profile_memory.webp) -->
+<figure>
+<img src="img/vllm_kern_profile_memory.webp" class="rounded-md" loading="lazy">
+<figcaption>The <span class="text-blue-400">blue</span> one is our most optimized version.</figcaption>
+</figure>
+
+The memory throughput is also improved with more warps trying to fetch data from global memory. We also have a better chance of "hiding the latency" of global memory access with more warps to schedule. L1 hit rate is up more than 20 times. We believe it is related to the work partitioning of flash decoding. Each thread is handling a smaller chunk of data (stronger locality), and the data is more likely to be reused by other threads in the same warp. So the L1 cache is much more effective. Though the full report is way to lengthy to include here, we do want to point out NSight Compute shows no room for improvement in shared memory bank conflicts, indicating its optimality in terms of shared mem access.
+
+<!-- ![](img/vllm_kern_profile_occupancy.webp) -->
+<figure>
+<img src="img/vllm_kern_profile_occupancy.webp" class="rounded-md" loading="lazy">
+<figcaption>The <span class="text-blue-400">blue</span> one is our most optimized version.</figcaption>
+</figure>
+
+As indicated in the launch statistics, our optimized version of flash decoding uses 80 registers per thread vs 96 of the baseline. This results in even more performance gain and could be optimized further with some loss of kernel generalization (i.e. drop support of some wired attention and model). From the occupancy information, we see high registers per thread is the main cause of low occupancy. With our optimization, the theoretical occupancy goes up from ~40% to 50%, a 20% increase. And the achieved occupancy has an increase of over 300% percent, allowing us to achieve much better GPU utilization.
+
+## Background
+
+Large language models (LLMs) like ChatGPT or Llama have recently gained a lot of attention. However, operating them is still quite costly. The expense of generating a single response, which might be around $0.01 for a brief interaction using an 8xA100 instance on AWS at the moment, can become substantial when considering billions of users engaging in multiple interactions daily. Certain tasks, such as code auto-completion which activates with each new character typed, are particularly resource-intensive. As LLMs are increasingly employed in various applications, even minor improvements in generation efficiency can lead to significant overall cost reductions.
 
 Our goal is to investigate and integrate advanced acceleration methods for LLM inference. We plan to evaluate these methods using GPU benchmarks, drawing insights from several key papers and blogs:
 
@@ -33,7 +111,9 @@ Our ultimate goal is to synthesize the best features from these studies to creat
 
 The conventional LLM decoding algorithm heavily relies on the attention mechanism. While this mechanism is pivotal for the model's effectiveness, it also represents a significant source of computational inefficiency in LLMs. The overall LLM inference pipeline is illustrated as follows:
 
-![LLM Inference Pipeline](img/llm_inferece_dataflow.png)
+<!-- ![LLM Inference Pipeline](img/llm_inferece_dataflow.png) -->
+<img src="img/llm_inferece_dataflow.png" class="rounded-md" loading="lazy">
+
 The inference pipeline can be segmented into three primary phases:
 
 1. **Prefill**: In this phase, the attention mechanism generates the initial token and establishes the Key-Value (KV) cache based on the user's input query. This phase predominantly involves the General Matrix Multiply (GEMM) operation.
@@ -52,7 +132,8 @@ Following the outline of the LLM inference pipeline, a key component that necess
 
 The self-attention mechanism within LLMs is governed by the following formula:
 
-![Self-Attention Mechanism](img/attn_equation.png)
+<!-- ![Self-Attention Mechanism](img/attn_equation.png) -->
+<img src="img/attn_equation.png" class="rounded-md" loading="lazy">
 
 In this equation:
 - `Q` denotes the Query matrix.
@@ -71,7 +152,8 @@ This mechanism is integral to the 'Prefill' and 'Decode' phases of the LLM infer
 
 The Key-Value (KV) Cache is also an integral component of the LLM inference pipeline, particularly within the context of the attention mechanism. The KV cache serves as a storage mechanism for the Key (`K`) and Value (`V`) matrices, which are central to the attention mechanism's computations.
 
-![kv_cache](img/kv_cache.png)
+<!-- ![kv_cache](img/kv_cache.png) -->
+<img src="img/kv_cache.png" class="rounded-md" loading="lazy">
 
 As the image shows, once the K and V matrices are computed, they are stored in the cache memory for future use to avoid redundant computations. The cache is updated with each new token generated, and the updated matrices are used to generate the next token. This process continues until the entire sequence is generated.
 
@@ -89,17 +171,20 @@ Prior to the development of FlashAttention, numerous attempts were made to accel
 
 In the era of modern GPUs, where computational speed often surpasses memory speed, most attention operations are hindered by memory access bottlenecks. Traditional attention mechanisms typically involve eight read-write operations to the HBM.
 
-![GPU Memory Hierarchy](img/gpu_memory.png)
+<!-- ![GPU Memory Hierarchy](img/gpu_memory.png) -->
+<img src="img/gpu_memory.png" class="rounded-md" loading="lazy">
 
 The figure above shows that SRAM has far higher read-write speeds compared to HBM, albeit with significantly less storage capacity. To optimize this, FlashAttention introduces a method to reduce read-write operations to HBM. It segments matrices involved in computations into smaller blocks for processing in SRAM, thereby increasing read-write efficiency and reducing dependency on HBM.
 
 Below is a diagram illustrating the FlashAttention algorithm, emphasizing its innovative strategies like tiling and softmax rescaling.
 
-![FlashAttention](img/flash_attn_forward_pass.png)
+<!-- ![FlashAttention](img/flash_attn_forward_pass.png) -->
+<img src="img/flash_attn_forward_pass.png" class="rounded-md" loading="lazy">
 
 Furthermore, FlashAttention utilizes a fused kernel approach to minimize memory access and further refine the attention process.
 
-![Fuse Kernel](img/fused_kernel.png)
+<!-- ![Fuse Kernel](img/fused_kernel.png) -->
+<img src="img/fused_kernel.png" class="rounded-md" loading="lazy">
 
 For comprehensive details on the FlashAttention algorithm, refer to the [original paper](https://arxiv.org/pdf/2205.14135.pdf) and the insightful [blog post](https://gordicaleksa.medium.com/eli5-flash-attention-5c44017022ad) by Aleksa Gordić, which offers an in-depth explanation of these concepts.
 
@@ -117,7 +202,8 @@ FlashAttention-2 builds on the foundation laid by FlashAttention-1, introducing 
 
 The figure below compares FlashAttention-1 and FlashAttention-2, illustrating the enhancements in parallelism and work partitioning:
 
-![FlashAttention-V1-V1-Comparison](img/flash_attn_v1_v2_comp.png)
+<!-- ![FlashAttention-V1-V1-Comparison](img/flash_attn_v1_v2_comp.png) -->
+<img src="img/flash_attn_v1_v2_comp.png" class="rounded-md" loading="lazy">
 
 The blog written by the Tri Dao (author of FlashAttention-2) offers a detailed explanation of the algorithm and its enhancements. For more information, refer to the [original paper](https://arxiv.org/pdf/2307.08691.pdf) and the [blog post](https://crfm.stanford.edu/2023/07/17/flash2.html).
 
@@ -130,13 +216,15 @@ PagedAttention represents a breakthrough in attention algorithms, taking inspira
 
 Traditionally, the KV cache is managed in contiguous memory spaces, as shown in the figure below. However, PagedAttention diverges from this norm by dividing the KV cache into discrete blocks. Each block holds attention keys and values for a certain number of tokens, but unlike conventional methods, these blocks are not stored in contiguous spaces.
 
-![Traditional KV Cache](img/curr_kv_cache.png)
+<!-- ![Traditional KV Cache](img/curr_kv_cache.png) -->
+<img src="img/curr_kv_cache.png" class="rounded-md" loading="lazy">
 
 This departure from contiguous space caching significantly reduces both internal and external fragmentation in GPU memory. The PagedAttention approach mirrors the flexibility of an operating system's virtual memory management, leading to more effective memory utilization. As a result, models can handle larger batch sizes, translating to higher throughput in LLM inference tasks, particularly for those involving lengthy sequences.
 
 Below is a diagram illustrating the PagedAttention algorithm. This visual representation highlights the algorithm's unique approach to memory management, fundamentally enhancing the efficiency of large language model inferencing.
 
-![PagedAttention](img/paged_attn.png)
+<!-- ![PagedAttention](img/paged_attn.png) -->
+<img src="img/paged_attn.png" class="rounded-md" loading="lazy">
 
 The implementation of PagedAttention marks a significant stride in optimizing the KV cache, promising to bolster the scalability and efficiency of large-scale language model inference.
 
@@ -154,10 +242,12 @@ Flash-Decoding, an extension of FlashAttention, introduces a novel parallelizati
 Below are visual comparisons highlighting the differences between Flash Attention and Flash Decoding:
 
 #### Flash Attention
-![Flash Attention](img/flash_attn.gif)
+<!-- ![Flash Attention](img/flash_attn.gif) -->
+<img src="img/flash_attn.gif" class="rounded-md" loading="lazy">
 
 #### Flash Decoding
-![Flash Decoding](img/flash_decoding.gif)
+<!-- ![Flash Decoding](img/flash_decoding.gif) -->
+<img src="img/flash_decoding.gif" class="rounded-md" loading="lazy">
 
 In addition, Flash-Decoding achieves parallelization across keys and values, albeit at the cost of a minor final reduction step.
 
@@ -182,7 +272,8 @@ FlashDecoding++ addresses this challenge by implementing a unified maximum value
 #### Comparison of Softmax Implementations
 The figure below illustrates the differences between various softmax implementations:
 
-![Softmax](img/softmax.png)
+<!-- ![Softmax](img/softmax.png) -->
+<img src="img/softmax.png" class="rounded-md" loading="lazy">
 
 - Traditional attention uses the standard softmax method.
 - FlashDecoding employs partial softmax, requiring synchronization among different partial vectors.
@@ -191,64 +282,10 @@ The figure below illustrates the differences between various softmax implementat
 #### Distribution of elements in the input vectors of softmax in LLMs
 The statistical distribution of elements in the input vectors of softmax varies across different large language models. The following figure displays this distribution for various LLMs:
 
-![LLM Distribution](img/llm_distribution.png)
+<!-- ![LLM Distribution](img/llm_distribution.png) -->
+<img src="img/llm_distribution.png" class="rounded-md" loading="lazy">
 
 However, as shown, the distribution of elements differs among LLMs. This variability implies the necessity for manual tuning of the maximum value for each specific LLM. For models like OPT-6.7B, which exhibit a broad distribution, the unified max value might not be optimally effective. Thus, while FlashDecoding++ streamlines the softmax calculation, it also introduces considerations for model-specific adjustments.
-
-
-## Performance Evaluation
-
-### LLM Inference Service: First Token Latency
-
-<!-- ![](img/first_token_latency.svg) -->
-<img src="img/first_token_latency.svg" class="rounded-md" />
-
-Here we are testing the latency of the first token/word generation during LLM serving. The latency is measured (in milliseconds) from the time when the user send the generation request to the time when the first token is generated and send back to the user. The red bar is a similar-sized network package send to the service to measure the underlying network latency. The yellow bar is when the when we disable caching, and we are using the simple attention kernel. The blue bar is when we switch to the flash decoding kernel. And finally the green bar is when we enable caching. This cache is very similar to the "first bounce cache" in project3 when we implement the path tracer by reusing the previous intermediate results. Whether it is paged or not doesn't matter here.
-
-The network latency is negligible compared to the generation time. As the model size increases, the effect of caching decreases and the acceleration from flash decoding starts to shine. When the model size becomes too large, memory becomes the bottleneck so cache doesn't help much. However, flash decoding can decrease the memory access when calculating softmax, results in more significant speedup.
-
-### LLM Inference Service: Throughput*
-
-> NOTE: Throughput involves a wide range of factors and can change significantly with different settings. The following results are only for reference.
-
-Throughput is measured by calculating the average number tokens generated per second over a long period of time. It is a end to end performance metric that involves a wide range of factors, including network latency, model, batching strategy, and lastly, the attention kernel. The red bar is throughput measured from HuggingFace, yellow is from Microsoft's DeepSpeed, blue and green is based on vLLM with different attention kernels.
-
-<!-- ![](img/inference_throughput.svg) -->
-<img src="img/inference_throughput.svg" class="rounded-md">
-
-As shown in the graph, the kernel alone doesn't have a significant impact on performance. But a general trend is that flash decoding is faster than base paged attention kernel. At least we know DeepSpeed have flash decoding attention and more optimization. Considering the effect of batching strategy and other tricks each framework implements, the kernel performance comparison is more evident when batch size is small, i.e. one. DeepSpeed does have better kernel implementation, but its "dynamic split-fuse" batching may cause overhead when the batch size is large and the context is short, resulting in its lower peak throughput than vLLM.
-
-In another setting, the Mistral-7B model, DeepSpeed take the lead and achieves 2x the performance of our custom vLLM.
-
-| Framework | Model | Batch Size | Context Length | Throughput (tokens/s) |
-| :-------: | :---: | :--------: | :------------: | :-------------------: |
-| DeepSpeed | Mistral-7B | Dynamic Batching | 32k | 2082 |
-| vLLM (Base Kernel) | Mistral-7B | Dynamic Batching | 32k | 1067 |
-| vLLM (Flash Decoding) | Mistral-7B | Dynamic Batching | 32k | 1130 |
-
-HuggingFace failed to run the throughput tests in this setting possibly due to memory limitation and its poor caching strategy (memory fragmentation leading to much larger mem usage when inference). This finding is more evidence that the kernel is not the only factor that determines the performance of the inference service. The batching strategy, caching, and other tricks each framework implements also play a significant role.
-
-### LLM Inference Service: Kernel Profiling
-
-In general, the optimized flash decoding kernel achieves better compute and memory throughput than the baseline attention kernel. Both kernels are optimized as much as possible, and NSight Compute doesn't show any shared memory bank conflicts in either kernel. Tiling matmul plus softmax using a few rounds of warp/block level reduction, is the most simple and efficient way to compute attention and avoid bank conflicts.
-
-Since flash decoding excels at small batch size and long context, we profile baseline attention and flash decoding used in inference service with a batch size of 1 and context length of 4096. The results are shown below, with **the baseline attention kernel being green and flash decoding kernel being blue**.
-
-![](img/vllm_kern_profile_sol.png)
-
-Flash decoding gives us a 2x speedup in compute throughput and 50% speedup in memory throughput. A very exciting first insight!
-
-![](img/vllm_kern_profile_compute.png)
-
-Our optimized version of flash decoding, when using half precision float point (FP16), tries to fuse 2 float point calculation in one instruction. And with a lot of fused multiply add (FMA) instructions, the kernel achieves much better compute throughput. We even have some inline PTX code that utilize the Tensor Core to do small matrix multiplication as evident in the compute workload analysis.
-
-![](img/vllm_kern_profile_memory.png)
-
-The memory throughput is also improved with more warps trying to fetch data from global memory. We also have a better chance of "hiding the latency" of global memory access with more warps to schedule. L1 hit rate is up more than 20 times. We believe it is related to the work partitioning of flash decoding. Each thread is handling a smaller chunk of data (stronger locality), and the data is more likely to be reused by other threads in the same warp. So the L1 cache is much more effective. Though the full report is way to lengthy to include here, we do want to point out NSight Compute shows no room for improvement in shared memory bank conflicts, indicating its optimality in terms of shared mem access.
-
-![](img/vllm_kern_profile_occupancy.png)
-
-As indicated in the launch statistics, our optimized version of flash decoding uses 80 registers per thread vs 96 of the baseline. This results in even more performance gain and could be optimized further with some loss of kernel generalization (i.e. drop support of some wired attention and model). From the occupancy information, we see high registers per thread is the main cause of low occupancy. With our optimization, the theoretical occupancy goes up from ~40% to 50%, a 20% increase. And the achieved occupancy has an increase of over 300% percent, allowing us to achieve much better GPU utilization.
 
 ## References
 
@@ -257,3 +294,7 @@ As indicated in the launch statistics, our optimized version of flash decoding u
 - **FlashAttention-2 Blog**: [Stanford CRFM Blog](https://crfm.stanford.edu/2023/07/17/flash2.html)
 - **Flash Attention Inference Github**: [Github Repository](https://github.com/Bruce-Lee-LY/flash_attention_inference)
 - **vLLM Github**: [Github Repository](https://github.com/vllm-project/vllm)
+
+{{< github repo="yinuotxie/Efficient-LLM-Inferencing-on-GPUs" >}}
+&nbsp;
+{{< github repo="toytag/vllm" >}}
