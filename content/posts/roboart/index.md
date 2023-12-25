@@ -127,9 +127,9 @@ In the end, we get a smooth path with consistent velocity. We were able to draw 
 ## Results
 
 {{< gallery >}}
-  <img src="img/results/1.jpeg" class="grid-w33 rounded-md" loading="lazy" />
-  <img src="img/results/2.jpeg" class="grid-w33 rounded-md" loading="lazy" />
-  <img src="img/results/3.jpeg" class="grid-w33 rounded-md" loading="lazy" />
+  <img src="img/results/1.jpeg" class="grid-w33 rounded-md" />
+  <img src="img/results/2.jpeg" class="grid-w33 rounded-md" />
+  <img src="img/results/3.jpeg" class="grid-w33 rounded-md" />
 {{< /gallery >}}
 
 ## Just Chillin'

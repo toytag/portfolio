@@ -1,6 +1,6 @@
 ---
 title: "Efficient Large Language Model Inference"
-date: 2023-12-11T00:58:30-04:00
+date: 2023-12-11T23:58:30-05:00
 tags: ["cuda", "parallel computing"]
 ---
 
@@ -60,11 +60,11 @@ Flash decoding gives us a 2x speedup in compute throughput and 50% speedup in me
 
 Our optimized version of flash decoding, when using half precision float point (FP16), tries to fuse 2 float point calculation in one instruction. And with a lot of fused multiply add (FMA) instructions, the kernel achieves much better compute throughput. We even have some inline PTX code that utilize the Tensor Core to do small matrix multiplication as evident in the compute workload analysis.
 
-![](img/vllm_kern_profile_memory.webp "The <span class=&quot;text-blue-400&quot;>blue</span> one is our most optimized version.")
+![](img/vllm_kern_profile_memory.webp)
 
 The memory throughput is also improved with more warps trying to fetch data from global memory. We also have a better chance of "hiding the latency" of global memory access with more warps to schedule. L1 hit rate is up more than 20 times. We believe it is related to the work partitioning of flash decoding. Each thread is handling a smaller chunk of data (stronger locality), and the data is more likely to be reused by other threads in the same warp. So the L1 cache is much more effective. Though the full report is way to lengthy to include here, we do want to point out NSight Compute shows no room for improvement in shared memory bank conflicts, indicating its optimality in terms of shared mem access.
 
-![](img/vllm_kern_profile_occupancy.webp "The <span class=&quot;text-blue-400&quot;>blue</span> one is our most optimized version.")
+![](img/vllm_kern_profile_occupancy.webp)
 
 As indicated in the launch statistics, our optimized version of flash decoding uses 80 registers per thread vs 96 of the baseline. This results in even more performance gain and could be optimized further with some loss of kernel generalization (i.e. drop support of some wired attention and model). From the occupancy information, we see high registers per thread is the main cause of low occupancy. With our optimization, the theoretical occupancy goes up from ~40% to 50%, a 20% increase. And the achieved occupancy has an increase of over 300% percent, allowing us to achieve much better GPU utilization.
 
