@@ -250,5 +250,7 @@ However, as shown, the distribution of elements differs among LLMs. This variabi
 - **vLLM Github**: [Github Repository](https://github.com/vllm-project/vllm)
 
 {{< github repo="yinuotxie/Efficient-LLM-Inferencing-on-GPUs" >}}
-&nbsp;
+
+<br>
+
 {{< github repo="toytag/vllm" >}}
