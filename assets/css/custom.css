@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-/*  
-   Apply a monospace font to the top-left title in the header.  
-   - Targets the <a> element with href="/" (typically the site logo or home link).  
-   - 'JetBrains Mono': Preferred custom monospace font (loaded from Google Fonts).  
-   - ui-monospace: Uses the system’s default UI monospace font if available.  
-   - monospace: Ensures a guaranteed fallback to any available monospace font.  
-*/  
-a[href="/"] {  
-    font-family: 'JetBrains Mono', ui-monospace, monospace;  
+/*
+  Apply a monospace font to the top-left title in the header.
+  - Targets the <a> element with href="/" (typically the site logo or home link).
+  - 'JetBrains Mono': Preferred custom monospace font (loaded from Google Fonts).
+  - ui-monospace: Uses the system’s default UI monospace font if available.
+  - monospace: Ensures a guaranteed fallback to any available monospace font.
+*/
+a[href="/"] {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/*
+  Styles to override the default header behavior and ensure icons in the main menu
+  are more evenly distributed.
+*/
+div.main-menu {
+  column-gap: 1rem;
 }
