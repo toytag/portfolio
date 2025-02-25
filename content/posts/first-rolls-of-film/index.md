@@ -16,21 +16,17 @@ This is my first experience with film stock, and shooting it with my Pentax 17 h
 ## Featured Photos
 
 {{< gallery >}}
-  <img src="img/pentax17/000028030014.jpg" class="grid-w33"/>
-  <img src="img/pentax17/000028030023.jpg" class="grid-w33"/>
-  <img src="img/pentax17/000028030061.jpg" class="grid-w33"/>
-  <img src="img/pentax17/000028030062.jpg" class="grid-w66"/>
-  <img src="img/pentax17/000028030064.jpg" class="grid-w33"/>
-  <img src="img/pentax17/000028030070.jpg" class="grid-w33"/>
-  <img src="img/nikonfe/000028040015.jpg" class="grid-w66"/>
-  <img src="img/nikonfe/000032080016.jpg" class="grid-w33"/>
-  <img src="img/nikonfe/000032080009.jpg" class="grid-w66"/>
-  <img src="img/nikonfe/000032080020.jpg" class="grid-w33"/>
-  <img src="img/nikonfe/000032080032.jpg" class="grid-w33"/>
-  <img src="img/nikonfe/000028040021.jpg" class="grid-w33"/>
-  <img src="img/nikonfe/000028040025.jpg" class="grid-w33"/>
+  {{< responsive-image src="img/pentax17/000028030014.jpg" class="grid-w33" >}}
+  {{< responsive-image src="img/pentax17/000028030023.jpg" class="grid-w33" >}}
+  {{< responsive-image src="img/pentax17/000028030061.jpg" class="grid-w33" >}}
+  {{< responsive-image src="img/pentax17/000028030062.jpg" class="grid-w66" >}}
+  {{< responsive-image src="img/pentax17/000028030064.jpg" class="grid-w33" >}}
+  {{< responsive-image src="img/pentax17/000028030070.jpg" class="grid-w33" >}}
+  {{< responsive-image src="img/nikonfe/000028040015.jpg" class="grid-w66" >}}
+  {{< responsive-image src="img/nikonfe/000032080016.jpg" class="grid-w33" >}}
+  {{< responsive-image src="img/nikonfe/000032080009.jpg" class="grid-w66" >}}
+  {{< responsive-image src="img/nikonfe/000032080020.jpg" class="grid-w33" >}}
+  {{< responsive-image src="img/nikonfe/000032080032.jpg" class="grid-w33" >}}
+  {{< responsive-image src="img/nikonfe/000028040021.jpg" class="grid-w33" >}}
+  {{< responsive-image src="img/nikonfe/000028040025.jpg" class="grid-w33" >}}
 {{< /gallery >}}
-
-<!-- ## Shots with Pentax 17 -->
-
-<!-- ## Shots with Nikon FE -->

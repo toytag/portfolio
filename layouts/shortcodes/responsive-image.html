@@ -1,0 +1,22 @@
+{{- $src := .Get "src" }}
+{{- $alt := .Get "alt" | default "" }}
+{{- $class := .Get "class" }}
+{{- $style := .Get "style" }}
+{{- $img := .Page.Resources.GetMatch $src }}
+
+<img
+  {{ with $class }}class="{{ . }}"{{ end }}
+  {{ with $style }}style="{{ . }}"{{ end }}
+  loading="lazy"
+  {{ if $img }}
+    srcset="
+      {{ ($img.Resize "330x webp").RelPermalink }} 330w,
+      {{ ($img.Resize "660x webp").RelPermalink }} 660w,
+      {{ ($img.Resize "1024x webp").RelPermalink }} 1024w,
+      {{ ($img.Resize "1320x webp").RelPermalink }} 2x"
+    src="{{ ($img.Resize "660x webp").RelPermalink }}"
+  {{ else }}
+    src="{{ $src | relURL }}"
+  {{ end }}
+  alt="{{ $alt }}"
+/>
