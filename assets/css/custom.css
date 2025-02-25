@@ -46,7 +46,7 @@
 
 
 /* Top left website title font */
-nav > a[href="/"], nav > a[href="/zh-cn/"] {
+nav > a[href="/"], nav > a[href="/zh-cn"], nav > a[href="/zh-cn/"] {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
