@@ -16,7 +16,7 @@ showLinks : false
 sharingLinks : false
 ---
 
-Hi, I'm Zhenzhong Tang, a Software Engineer at Arista Networks and a former Computer and Information Science (CIS) master's student at the University of Pennsylvania. My passion lies in building robust, high-performance systems. At Arista, I work on the Extensible Operating System (EOS), developing hitless restart features for minimal downtime and optimizing data center networking with VXLAN.
+Hi, I'm Zhenzhong Tang, a Software Engineer at Arista Networks and a former Computer and Information Science (CIS) master's student at the University of Pennsylvania. My passion lies in building robust, high-performance systems. At Arista, I work on the EOS (Extensible Operating System), developing hitless restart features for minimal downtime and optimizing data center networking with VXLAN (Virtual eXtensible Local Area Network).
 
 Previously, at Amazon and Western Digital, I optimized large-scale ML systems for ad recommendations and firmware performance. I also had some hands-on cloud admin experience with Docker and Kubernetes on my VPS and home server.
 
@@ -74,7 +74,7 @@ Always eager to tackle challenging problems and learn new skills!
     Feb. 2024 - present
   </span>
   </div>
-  <div class="experience-headline">Software Engineer, Extensible Operating System (EOS)</div>
+  <div class="experience-headline">Software Engineer, EOS (Extensible Operating System)</div>
   <div class="experience-content">Developing hitless restart redundancy feature and VXLAN (Virtual eXtensible Local Area Network) feature for data center networking.</div>
 {{< /timelineItem >}}
 
@@ -101,7 +101,7 @@ Always eager to tackle challenging problems and learn new skills!
       class="experience-logo nozoom"
     />
     <span class="experience-date">
-      Sept. 2022 - Dec. 2022
+      May 2022 - Aug. 2022
     </span>
   </div>
   <div class="experience-headline">Software Engineer Intern, Data Center HDD Firmware</div>

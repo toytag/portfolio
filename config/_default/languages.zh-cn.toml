@@ -1,10 +1,10 @@
 languageCode = "zh-cn"
-languageName = "简体中文"
+languageName = "中文"
 weight = 2
 title = "@toytag.net"
 
 [params]
-  displayName = "简体中文"
+  displayName = "中文"
   isoCode = "zh-cn"
   rtl = false
   dateFormat = "2006-01-02"
@@ -14,9 +14,9 @@ title = "@toytag.net"
   # copyright = "Copy, _right?_ :thinking_face: <br> &copy; { year } Zhenzhong Tang"
 
 [params.author]
-  name = "湯振中"
+  name = "汤振中"
   image = "img/me.gif"
-  headline = "CS & CG @ UPenn"
+  headline = "程序猿 🐒 @ Arista Networks <br> UPenn CIS 校友"
   bio = "码农自学成才"
   links = [
     { linkedin = "https://www.linkedin.com/in/zhenzhong-anthony-tang-82334a210" },

@@ -16,8 +16,8 @@ title = "@toytag.net"
 [params.author]
   name = "Zhenzhong \"Anthony\" Tang"
   image = "img/me.jpg"
-  headline = "Software Engineer @ Arista Networks <br> CIS Alumni @ UPenn"
-  bio = "Student, Researcher, and Developer"
+  headline = "Software Engineer 🧑‍💻 @ Arista Networks <br> CIS Alumni @ UPenn"
+  bio = "Code, Debug, Rewrite, Repeat"
   links = [
     { linkedin = "https://www.linkedin.com/in/zhenzhong-anthony-tang-82334a210" },
     { instagram = "https://instagram.com/toytag12" },

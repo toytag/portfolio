@@ -1,14 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+/* latin */
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dancingscript/v25/If2RXTr6YS-zF4S-kcSWSVi_szLgiuEHiC4W.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* [110] contains 振 */
+@font-face {
+  font-family: 'Liu Jian Mao Cao';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/liujianmaocao/v23/845DNN84HJrccNonurqXILGpvCOofe_VLmWtCJC7r6ci0aaSYffqiszq2v-LaZZ_LhD7uQI08cgD_e4.110.woff2) format('woff2');
+  unicode-range: U+300c-300d, U+4e54, U+4e58, U+4e95, U+4ec1, U+4f2f, U+4f38, U+4fa3, U+4fca, U+503e, U+5141, U+5144, U+517c, U+51cc, U+51ed, U+5242, U+52b2, U+52d2, U+52e4, U+540a, U+5439, U+5448, U+5496, U+54ed, U+5565, U+5761, U+5766, U+58ee, U+593a, U+594b, U+594f, U+5954, U+5996, U+59c6, U+59ff, U+5b64, U+5bff, U+5c18, U+5c1d, U+5c97, U+5ca9, U+5cb8, U+5e9f, U+5ec9, U+5f04, U+5f7b, U+5fa1, U+5fcd, U+6012, U+60a6, U+60ac, U+60b2, U+60ef, U+626e, U+6270, U+6276, U+62d6, U+62dc, U+6316, U+632f, U+633a, U+6355, U+63aa, U+6447, U+649e, U+64c5, U+654c, U+65c1, U+65cb, U+65e6, U+6606, U+6731, U+675c, U+67cf, U+67dc, U+6846, U+6b8b, U+6beb, U+6c61, U+6c88, U+6cbf, U+6cdb, U+6cea, U+6d45, U+6d53, U+6d74, U+6d82, U+6da8, U+6db5, U+6deb, U+6eda, U+6ee8, U+6f0f, U+706d, U+708e, U+70ae, U+70bc, U+70c2, U+70e6, U+7237-7238, U+72fc, U+730e, U+731b, U+739b, U+73bb, U+7483, U+74dc, U+74f6, U+7586, U+7626, U+775b, U+77ff, U+788e, U+78b0, U+7956, U+7965, U+79e6, U+7af9, U+7bee, U+7c97, U+7eb1, U+7eb7, U+7ed1, U+7ed5, U+7f6a, U+7f72, U+7fbd, U+8017, U+808c, U+80a9, U+80c6, U+80ce, U+8150, U+8170, U+819c, U+820d, U+8230, U+8239, U+827e, U+8377, U+8389, U+83b2, U+8428, U+8463, U+867e, U+88c2, U+88d9, U+8986, U+8bca, U+8bde, U+8c13, U+8c8c, U+8d21, U+8d24, U+8d56, U+8d60, U+8d8b, U+8db4, U+8e2a, U+8f68, U+8f89, U+8f9b, U+8fa8, U+8fbd, U+9003, U+90ce, U+90ed, U+9189, U+94bb, U+9505, U+95f9, U+963b, U+9655, U+966a, U+9677, U+96fe, U+9896, U+99a8, U+9a71, U+9a82, U+9a91, U+9b45, U+9ece, U+9f20, U+feff, U+ff0d;
+}
+/* [111] contains 汤 */
+@font-face {
+  font-family: 'Liu Jian Mao Cao';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/liujianmaocao/v23/845DNN84HJrccNonurqXILGpvCOofe_VLmWtCJC7r6ci0aaSYffqiszq2v-LaZZ_LhD7uQI08cgD_e4.111.woff2) format('woff2');
+  unicode-range: U+4e4c, U+4e88, U+4ea1, U+4ea6, U+4ed3-4ed4, U+4eff, U+4f30, U+4fa7, U+4fc4, U+4fd7, U+500d, U+504f, U+5076-5077, U+517d, U+5192, U+51c9, U+51ef, U+5238, U+5251, U+526a, U+52c7, U+52df, U+52ff, U+53a6, U+53a8, U+53ec, U+5410, U+559d, U+55b7, U+5634, U+573e, U+5783, U+585e, U+586b, U+58a8, U+5999, U+59d3, U+5a1c, U+5a46, U+5b54-5b55, U+5b85, U+5b8b, U+5b8f, U+5bbf, U+5bd2, U+5c16, U+5c24, U+5e05, U+5e45, U+5e7c, U+5e84, U+5f03, U+5f1f, U+5f31, U+5f84, U+5f90, U+5fbd, U+5fc6, U+5fd9, U+5fe7, U+6052, U+6062, U+6089, U+60a3, U+60d1, U+6167, U+622a, U+6234, U+624e, U+6269, U+626c, U+62b5, U+62d2, U+6325, U+63e1, U+643a, U+6446, U+6562, U+656c, U+65e2, U+65fa, U+660c, U+6628, U+6652, U+6668, U+6676, U+66fc, U+66ff, U+6717, U+676d, U+67aa, U+67d4, U+6843, U+6881, U+68d2, U+695a, U+69fd, U+6a2a, U+6b8a, U+6c60, U+6c64, U+6c9f, U+6caa, U+6cc9, U+6ce1, U+6cfd, U+6d1b, U+6d1e, U+6d6e, U+6de1, U+6e10, U+6e7f, U+6f5c, U+704c, U+7070, U+7089, U+70b8, U+718a, U+71c3, U+723d, U+732a, U+73cd, U+7518, U+756a, U+75af, U+75be, U+75c7, U+76d2, U+76d7, U+7763, U+78e8, U+795d, U+79df, U+7c4d, U+7d2f, U+7ee9, U+7f13, U+7f8a, U+8000, U+8010, U+80af, U+80f6, U+80f8, U+8212, U+8273, U+82f9, U+83ab, U+83b1, U+83f2, U+8584, U+871c, U+8861, U+888b, U+88c1, U+88e4, U+8bd1, U+8bf1, U+8c31, U+8d5a, U+8d75-8d76, U+8de8, U+8f85, U+8fa3, U+8fc5, U+9006, U+903c, U+904d, U+9075, U+9178, U+9274, U+950b, U+9526, U+95ea, U+9636, U+9686, U+978b, U+987f, U+9a7e, U+9b42, U+9e1f, U+9ea6, U+9f13, U+9f84, U+ff5e;
+}
+/* [118] contains 中 */
+@font-face {
+  font-family: 'Liu Jian Mao Cao';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/liujianmaocao/v23/845DNN84HJrccNonurqXILGpvCOofe_VLmWtCJC7r6ci0aaSYffqiszq2v-LaZZ_LhD7uQI08cgD_e4.119.woff2) format('woff2');
+  unicode-range: U+20-22, U+27-2a, U+2c-3b, U+3f, U+41-4d, U+4f-5d, U+61-7b, U+7d, U+ab, U+ae, U+b2, U+b7, U+bb, U+df-e5, U+e7-ea, U+ec-ed, U+f1-f4, U+f6, U+f9-fa, U+fc, U+101, U+103, U+113, U+12b, U+148, U+14d, U+16b, U+1ce, U+1d0, U+300-301, U+1ebf, U+1ec7, U+2013-2014, U+2022, U+2027, U+2039-203a, U+2122, U+3001-3002, U+3042, U+3044, U+3046, U+3048, U+304a-3055, U+3057, U+3059-305b, U+305d, U+305f-3061, U+3063-306b, U+306d-3073, U+3075-3076, U+3078-3079, U+307b, U+307e-307f, U+3081-308d, U+308f, U+3092-3093, U+30a1-30a4, U+30a6-30bb, U+30bd, U+30bf-30c1, U+30c3-30c4, U+30c6-30cb, U+30cd-30d7, U+30d9-30e1, U+30e3-30e7, U+30e9-30ed, U+30ef, U+30f3, U+30fb-30fc, U+3127, U+4e00, U+4e2d, U+65b0, U+65e5, U+6708-6709, U+70b9, U+7684, U+7f51, U+ff0c, U+ff0e, U+ff1a;
+}
+/* [119] contains 文 */
+@font-face {
+  font-family: 'Liu Jian Mao Cao';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/liujianmaocao/v23/845DNN84HJrccNonurqXILGpvCOofe_VLmWtCJC7r6ci0aaSYffqiszq2v-LaZZ_LhD7uQI08cgD_e4.118.woff2) format('woff2');
+  unicode-range: U+d, U+3e, U+5f, U+7c, U+a0, U+a9, U+4e09-4e0b, U+4e0d-4e0e, U+4e13, U+4e1a, U+4e2a, U+4e3a-4e3b, U+4e4b, U+4e86, U+4e8e, U+4ea7, U+4eba, U+4ee4-4ee5, U+4eec, U+4f1a, U+4f4d, U+4f53, U+4f5c, U+4f60, U+4fe1, U+5165, U+5168, U+516c, U+5173, U+5176, U+5185, U+51fa, U+5206, U+5230, U+5236, U+524d, U+529b, U+52a0-52a1, U+52a8, U+5316, U+533a, U+53cb, U+53d1, U+53ef, U+53f7-53f8, U+5408, U+540c-540e, U+544a, U+548c, U+54c1, U+56de, U+56fd-56fe, U+5728, U+5730, U+5907, U+5916, U+591a, U+5927, U+5929, U+597d, U+5982, U+5b50, U+5b66, U+5b89, U+5b9a, U+5b9e, U+5ba2, U+5bb6, U+5bf9, U+5c0f, U+5de5, U+5e02, U+5e73-5e74, U+5e7f, U+5ea6, U+5f00, U+5f0f, U+5f53, U+5f55, U+5fae, U+5fc3, U+6027, U+606f, U+60a8, U+60c5, U+610f, U+6210-6211, U+6237, U+6240, U+624b, U+6280, U+62a5, U+63a5, U+63a8, U+63d0, U+6536, U+6570, U+6587, U+65b9, U+65e0, U+65f6, U+660e, U+662d, U+662f, U+66f4, U+6700, U+670d, U+672c, U+673a, U+6743, U+6765, U+679c, U+682a, U+6b21, U+6b63, U+6cbb, U+6cd5, U+6ce8, U+6d3b, U+70ed, U+7247-7248, U+7269, U+7279, U+73b0, U+7406, U+751f, U+7528, U+7535, U+767b, U+76f8, U+770b, U+77e5, U+793e, U+79d1, U+7ad9, U+7b49, U+7c7b, U+7cfb, U+7ebf, U+7ecf, U+7f8e, U+8005, U+8054, U+80fd, U+81ea, U+85cf, U+884c, U+8868, U+8981, U+89c6, U+8bba, U+8bdd, U+8bf4, U+8bf7, U+8d44, U+8fc7, U+8fd8-8fd9, U+8fdb, U+901a, U+9053, U+90e8, U+91d1, U+957f, U+95e8, U+95ee, U+95f4, U+9762, U+9875, U+9898, U+9996, U+9ad8, U+ff01, U+ff08-ff09;
+}
 
-/*
-  Apply a monospace font to the top-left title in the header.
-  - Targets the <a> element with href="/" (typically the site logo or home link).
-  - 'JetBrains Mono': Preferred custom monospace font (loaded from Google Fonts).
-  - ui-monospace: Uses the system’s default UI monospace font if available.
-  - monospace: Ensures a guaranteed fallback to any available monospace font.
-*/
-a[href="/"] {
+
+/* Top left website title font */
+nav > a[href="/"], nav > a[href="/zh-cn/"] {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Top right translate component font */
+div.nested-menu > div:nth-child(2):lang(en), div.menuhide a[href]:not([href*="zh-cn"]) {
+  font-family: "Dancing Script", system-ui, sans-serif;
+}
+div.nested-menu > div:nth-child(2):lang(zh-cn), div.menuhide a[href*="zh-cn"] {
+  font-family: "Liu Jian Mao Cao", system-ui, sans-serif;
+}
+
+/* Homepage name font */
+article img + h1:has(+ h2):lang(en) {
+  font-family: "Dancing Script", system-ui, sans-serif;
+  font-size: 3rem;
+  line-height: 3.75rem;
+}
+article img + h1:has(+ h2):lang(zh-cn) {
+  font-family: "Liu Jian Mao Cao", system-ui, sans-serif;
+  font-size: 4.75rem;
+  line-height: 5.5rem;
 }
 
 /*

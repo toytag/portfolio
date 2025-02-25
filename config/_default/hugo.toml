@@ -8,7 +8,7 @@ verbose = true
 theme = "blowfish"
 baseURL = "https://toytag.net"
 defaultContentLanguage = "en"
-disableLanguages = [ "zh-cn" ] #to allow translation work requiring shipping to production
+disableLanguages = [] #to allow translation work requiring shipping to production
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
