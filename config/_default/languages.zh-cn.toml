@@ -15,8 +15,8 @@ title = "@toytag.net"
 
 [params.author]
   name = "汤振中"
-  image = "img/me.gif"
-  headline = "程序猿 🐒 @ Arista Networks <br> UPenn CIS 校友"
+  image = "img/me.jpg"
+  headline = "Arista Networks 程序猿 🐒 <br> UPenn CIS 校友"
   bio = "码农自学成才"
   links = [
     { linkedin = "https://www.linkedin.com/in/zhenzhong-anthony-tang-82334a210" },
