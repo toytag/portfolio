@@ -86,7 +86,7 @@ smartTOCHideUnfocusedChildren = false
     "twitter",
     "whatsapp",
   ]
-  showZenMode = true
+  showZenMode = false
 
 [list]
   showHero = true

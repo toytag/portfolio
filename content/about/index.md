@@ -11,7 +11,6 @@ showReadingTime : false
 # showTaxonomies : false
 showWordCount : false
 showTableOfContents : false
-showZenMode : false
 showLinks : false
 sharingLinks : false
 ---
