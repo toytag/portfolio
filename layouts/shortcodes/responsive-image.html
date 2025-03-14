@@ -7,14 +7,13 @@
 <img
   {{ with $style }}style="{{ . }}"{{ end }}
   {{ with $class }}class="{{ . }}"{{ end }}
-  loading="lazy"
+  {{ if not (in $class "nolazy") }}loading="lazy"{{ end }}
   srcset="
-    {{ (.Resize "330x webp Lanczos").RelPermalink }} 330w,
-    {{ (.Resize "660x webp Lanczos").RelPermalink }} 660w,
-    {{ (.Resize "1024x webp Lanczos").RelPermalink }} 1024w,
-    {{ (.Resize "1320x webp Lanczos").RelPermalink }} 2x"
-  data-zoom-src="{{ (.Resize "2048x webp Lanczos").RelPermalink }}"
-  src="{{ (.Resize "660x webp Lanczos").RelPermalink }}"
+    {{ (.Fit "360x360 webp Lanczos").RelPermalink }} 360w,
+    {{ (.Fit "720x720 webp Lanczos").RelPermalink }} 720w,
+    {{ (.Fit "1080x1080 webp Lanczos").RelPermalink }} 1080w,
+    {{ (.Fit "1440x1440 webp Lanczos").RelPermalink }} 2x"
+  src="{{ .RelPermalink }}"
   alt="{{ $alt }}"
 />
 {{ end }}

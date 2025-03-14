@@ -1,5 +1,5 @@
 ---
-title: "富士C400 -- 等到放晴那天，也许我会比较好一点"
+title: "富士C400——等到放晴那天，也许我会比较好一点"
 date: 2025-03-12T23:35:27-05:00
 tags: ["film", "fujifilm c400", "pentax 17", "nikon fe"]
 
@@ -21,20 +21,19 @@ Happy shooting! 📸✨
 ## 菲林精选
 
 {{< gallery >}}
-  {{< responsive-image src="img/000042060027.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042050001.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042050002.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042060004.jpg" class="grid-w66 white-frame" >}}
-  {{< responsive-image src="img/000042050003.jpg" class="grid-w66 white-frame" >}}
-  {{< responsive-image src="img/000042050006.jpg" class="grid-w66 white-frame" >}}
-  {{< responsive-image src="img/000042060003.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042060005.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042060007.jpg" class="grid-w66 white-frame" >}}
-  {{< responsive-image src="img/000042060016.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042060023.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042060067.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042050012.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042060037.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042060046.jpg" class="grid-w33 white-frame" >}}
-  {{< responsive-image src="img/000042060047.jpg" class="grid-w33 white-frame" >}}
+  {{< responsive-image src="img/000042060004.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042050002.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042060027.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042050001.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042050006.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042060023.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042050003.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042060016.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042060007.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042060005.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042060046.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042060037.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042060003.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042060047.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< responsive-image src="img/000042060067.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
 {{< /gallery >}}
