@@ -24,7 +24,7 @@ Happy shooting! 📸✨
   {{< responsive-image src="img/000042060004.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy" >}}
   {{< responsive-image src="img/000042050002.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy" >}}
   {{< responsive-image src="img/000042060027.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000042050001.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy" >}}
+  {{< responsive-image src="img/000042060029.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy" >}}
   {{< responsive-image src="img/000042050006.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy" >}}
   {{< responsive-image src="img/000042060023.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy" >}}
   {{< responsive-image src="img/000042050003.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy" >}}
