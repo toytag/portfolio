@@ -46,6 +46,10 @@ div.main-menu {
   }
 }
 
+.border-fluid {
+  border-width: clamp(4px, 1vw, 8px); /* ≥ 2 px, ≤ 8 px, scales in between */
+}
+
 .border-white {
   border-color: #fff;
 }

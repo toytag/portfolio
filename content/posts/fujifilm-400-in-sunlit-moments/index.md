@@ -1,7 +1,7 @@
 ---
-title: "Fujifilm C400 in Sunlit Moments"
+title: "Fujifilm 400 in Sunlit Moments"
 date: 2025-03-12T23:35:27-05:00
-tags: ["film", "fujifilm c400", "pentax 17", "nikon fe"]
+tags: ["film", "fujifilm 400", "pentax 17", "nikon fe"]
 
 showReadingTime : false
 showTableOfContents : false
@@ -10,9 +10,9 @@ showWordCount : false
 
 {{< full-width >}}
 
-Fujifilm C400 is a versatile color negative film beloved for its vibrant yet balanced colors. Last week, I took a roll to Tufts University, exploring the charming corners, lively quads, and iconic landmarks of the campus.
+Fujifilm 400 is a versatile color negative film beloved for its vibrant yet balanced colors. Last week, I took a roll to Tufts University, exploring the charming corners, lively quads, and iconic landmarks of the campus.
 
-Throughout the shoot, the C400's strengths truly shined through. From capturing the lush greenery on Sol Gittleman Park to highlighting the distinctive brickwork of Tisch Library, every photo carried a bright, lively, and slightly nostalgic feel. The film effortlessly brought out the beauty of each scene, connecting moments with a cohesive aesthetic.
+Throughout the shoot, the Fuji400's strengths truly shined through. From capturing the lush greenery on Sol Gittleman Park to highlighting the distinctive brickwork of Tisch Library, every photo carried a bright, lively, and slightly nostalgic feel. The film effortlessly brought out the beauty of each scene, connecting moments with a cohesive aesthetic.
 
 Overall, it's a much better film stock compared to Kodak Gold 200, offering superior results in terms of vibrancy and versatility. As a bonus, it's even cheaper! Say goodbye to kg200.
 
