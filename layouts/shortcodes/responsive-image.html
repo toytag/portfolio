@@ -13,8 +13,9 @@
     {{ (.Fit "720x720 webp Lanczos").RelPermalink }} 720w,
     {{ (.Fit "1080x1080 webp Lanczos").RelPermalink }} 1080w,
     {{ (.Fit "1440x1440 webp Lanczos").RelPermalink }} 2x"
-  src="{{ .RelPermalink }}"
-  data-zoom-src="{{ .RelPermalink }}"
+  {{ $fullRes := (.Resize (printf "%dx%d webp Lanczos" .Width .Height)) }}
+  data-zoom-src="{{ $fullRes.RelPermalink }}"
+  src="{{ $fullRes.RelPermalink }}"
   alt="{{ $alt }}"
 />
 {{ end }}
