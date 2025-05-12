@@ -1,3 +1,4 @@
 [hugoVersion]
   extended = false
-  min = "0.87.0"
+  # Requires Hugo 0.119.0+ for the .Process image function
+  min = "0.119.0"
