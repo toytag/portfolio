@@ -32,8 +32,8 @@
         {{ (.Resize "660x webp Lanczos").RelPermalink }} 660w,
         {{ (.Resize "1024x webp Lanczos").RelPermalink }} 1024w,
         {{ (.Resize "1320x webp Lanczos").RelPermalink }} 2x"
-        src="{{ (.Process "webp").RelPermalink }}"
-        data-zoom-src="{{ (.Process "webp").RelPermalink }}"
+        src="{{ (.Resize "660x webp Lanczos").RelPermalink }}"
+        data-zoom-src="{{ .RelPermalink }}"
         alt="{{ $altText }}"
       />
       {{- end }}

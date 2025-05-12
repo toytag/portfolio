@@ -13,8 +13,8 @@
     {{ (.Fit "720x720 webp Lanczos").RelPermalink }} 720w,
     {{ (.Fit "1080x1080 webp Lanczos").RelPermalink }} 1080w,
     {{ (.Fit "1440x1440 webp Lanczos").RelPermalink }} 2x"
-  src="{{ (.Process "webp").RelPermalink }}"
-  data-zoom-src="{{ (.Process "webp").RelPermalink }}"
+  src="{{ .RelPermalink }}"
+  data-zoom-src="{{ .RelPermalink }}"
   alt="{{ $alt }}"
 />
 {{ end }}
