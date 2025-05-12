@@ -49,7 +49,7 @@ A versatile color negative film that excels in various lighting conditions, prov
 
 *with [AF Nikkor 28-105mm f/3.5-4.5D](https://www.kenrockwell.com/nikon/28105af.htm) and [Nikkor AI-s 50mm f/1.4](https://kenrockwell.com/nikon/50mm-f14-ais.htm)*
 
-A more budget-friendly option that still delivers great results, especially in bright daylight.
+A more budget-friendly option that still delivers ok results in bright daylight. The scans came out a bit yellowish, reminiscent of Kodak Gold 200. I wouldn't say it's a bad film, but I don't recommend it.
 
 {{< gallery >}}
     {{< responsive-image src="img/fuji200/000088460010.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}

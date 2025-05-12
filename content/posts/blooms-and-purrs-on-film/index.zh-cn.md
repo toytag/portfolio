@@ -51,7 +51,7 @@ showWordCount : false
 
 *搭配 [AF Nikkor 28‑105 mm f/3.5‑4.5D](https://www.kenrockwell.com/nikon/28105af.htm) 镜头*
 
-经济实惠，买不了吃亏，买不了上当。在明亮日光下能带来不错的成像效果。
+经济实惠，买不了吃亏，买不了上当，但也没比富士400便宜多少。扫描出来的默认底片发黄，有一种换皮柯达金200的感觉。
 
 {{< gallery >}}
     {{< responsive-image src="img/fuji200/000088460010.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
