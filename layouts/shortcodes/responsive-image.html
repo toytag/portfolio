@@ -9,13 +9,11 @@
   {{ with $class }}class="{{ . }}"{{ end }}
   {{ if not (in $class "nolazy") }}loading="lazy"{{ end }}
   srcset="
-    {{ (.Fit "360x360 webp Lanczos").RelPermalink }} 360w,
-    {{ (.Fit "720x720 webp Lanczos").RelPermalink }} 720w,
-    {{ (.Fit "1080x1080 webp Lanczos").RelPermalink }} 1080w,
-    {{ (.Fit "1440x1440 webp Lanczos").RelPermalink }} 2x"
-  {{ $fullRes := (.Resize (printf "%dx%d webp Lanczos" .Width .Height)) }}
-  data-zoom-src="{{ $fullRes.RelPermalink }}"
-  src="{{ $fullRes.RelPermalink }}"
+    {{ (.Resize "400x webp Lanczos").RelPermalink }} 400w,
+    {{ (.Resize "800x webp Lanczos").RelPermalink }} 800w,
+    {{ (.Resize "1200x webp Lanczos").RelPermalink }} 1200w"
+  data-zoom-src="{{ (.Fit "3200x3200 webp Lanczos").RelPermalink }}"
+  src="{{ (.Resize "800x webp Lanczos").RelPermalink }}"
   alt="{{ $alt }}"
 />
 {{ end }}
