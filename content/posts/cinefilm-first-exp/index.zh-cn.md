@@ -8,6 +8,18 @@ showTableOfContents : false
 showWordCount : false
 ---
 
+<style>
+.dyn-bw {
+  background: black;
+  color: white;
+}
+
+.dark .dyn-bw {
+  background: white;
+  color: black;
+}
+</style>
+
 {{< full-width >}}
 
 用尼康FE和宾得17拍摄Kodak Vision3 5219（500T）和5207（250D），颇具电影感，却也免不了折腾。<a href="#kodak-5219--nikon-fe" style="color: rgb(0, 150, 200);">500T为钨丝灯色温白平衡，日光下若无矫正，画面就是only blue～。</a> <a href="#kodak-5207--pentax-17" style="color: rgb(200, 150, 0);">而250D虽为日光设计，却偏爱一袭暖黄底色，像过期十年的牛奶一样。</a> 两款胶卷皆有先进的染料分层技术，明暗细节交织，动态范围广且细腻丰富，然而初扫出的色调却难称完美。若想色彩自然和谐，免不了费一番心思去精调后期。虽不能“即拍即用”，但于追寻独特质感的摄影师而言，值得折腾一番。
