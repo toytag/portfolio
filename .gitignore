@@ -1,4 +1,7 @@
-/.vscode
+/docs/
+/.vscode/
+AGENTS.md
+CLAUDE.md
 
 # ---
 # https://github.com/github/gitignore/blob/main/community/Golang/Hugo.gitignore

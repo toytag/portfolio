@@ -64,14 +64,14 @@ Always eager to tackle challenging problems and learn new skills!
 
 {{< timelineItem icon="location-dot" >}}
   <div class="experience-logo-date-layout">
-  <img
-    src="logos/arista.svg"
-    style="max-width: 350px;"
-    class="experience-logo nozoom"
-  />
-  <span class="experience-date">
-    Feb. 2024 - present
-  </span>
+    <img
+      src="logos/arista.svg"
+      style="max-width: 350px;"
+      class="experience-logo nozoom"
+    />
+    <span class="experience-date">
+      Feb. 2024 - present
+    </span>
   </div>
   <div class="experience-headline">Software Engineer, EOS (Extensible Operating System)</div>
   <div class="experience-content">Developing hitless restart redundancy feature and VXLAN (Virtual eXtensible Local Area Network) feature for data center networking.</div>

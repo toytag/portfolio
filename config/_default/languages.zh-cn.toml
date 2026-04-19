@@ -1,5 +1,5 @@
-languageCode = "zh-cn"
-languageName = "中文"
+locale = "zh-cn"
+label = "中文"
 weight = 2
 title = "@toytag.net"
 
@@ -10,7 +10,7 @@ title = "@toytag.net"
   dateFormat = "2006-01-02"
   # logo = "logo.png"
   # secondaryLogo = "logo.png"
-  # description = "Zhenzhong \"Anthony\" Tang's Odyssey: Portfolio, Blog, and Beyond"
+  # description = "Zhenzhong Tang's Odyssey: Portfolio, Blog, and Beyond"
   # copyright = "Copy, _right?_ :thinking_face: <br> &copy; { year } Zhenzhong Tang"
 
 [params.author]
@@ -19,7 +19,7 @@ title = "@toytag.net"
   headline = "Arista Networks 程序猿 🐒 <br> UPenn CIS 校友"
   bio = "码农自学成才"
   links = [
-    { linkedin = "https://www.linkedin.com/in/zhenzhong-anthony-tang-82334a210" },
+    { linkedin = "https://www.linkedin.com/in/zhenzhong-tang-82334a210" },
     { instagram = "https://instagram.com/toytag12" },
     { github = "https://github.com/toytag" },
   ]

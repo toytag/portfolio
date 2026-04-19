@@ -10,6 +10,8 @@ showWordCount : false
 
 {{< full-width >}}
 
+{{< carousel images="img/**/*" aspectRatio="16-9" interval="2500" >}}
+
 富士400是一款多功能的彩色负片胶卷，以其鲜艳而平衡的色彩深受喜爱。上周末，我带着一卷富士400前往塔夫茨大学，探索校园地标与充满惊喜的角落。
 
 整个拍摄过程中富士400的优势得到了充分展现。在阳光卷最适合的大晴天，从索尔吉特尔曼公园（其实是个棒球场）郁郁葱葱的绿意到蒂施图书馆独特的砖墙，每张照片都呈现出明亮、生动且略带怀旧的氛围。这款胶卷轻松地展现了每个场景的美感，使画面风格保持一致且富有表现力。
@@ -21,19 +23,19 @@ Happy shooting! 📸✨
 ## 菲林精选
 
 {{< gallery >}}
-  {{< responsive-image src="img/000042060004.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042050002.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060027.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060029.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042050006.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060023.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042050003.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060016.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060007.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060005.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060046.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060037.jpg" class="grid-w100 sm:grid-w30 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060003.jpg" class="grid-w100 sm:grid-w60 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060047.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
-  {{< responsive-image src="img/000042060067.jpg" class="grid-w100 sm:grid-w40 border-4 md:border-8 border-white shadow-md nolazy nozoom" >}}
+  {{< figure src="img/000042060004.jpg" figureClass="grid-w100 sm:grid-w60 shadow-md" >}}
+  {{< figure src="img/000042050002.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
+  {{< figure src="img/000042060027.jpg" figureClass="grid-w100 sm:grid-w30 shadow-md" >}}
+  {{< figure src="img/000042060029.jpg" figureClass="grid-w100 sm:grid-w30 shadow-md" >}}
+  {{< figure src="img/000042050006.jpg" figureClass="grid-w100 sm:grid-w60 shadow-md" >}}
+  {{< figure src="img/000042060023.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
+  {{< figure src="img/000042050003.jpg" figureClass="grid-w100 sm:grid-w60 shadow-md" >}}
+  {{< figure src="img/000042060016.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
+  {{< figure src="img/000042060007.jpg" figureClass="grid-w100 sm:grid-w60 shadow-md" >}}
+  {{< figure src="img/000042060005.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
+  {{< figure src="img/000042060046.jpg" figureClass="grid-w100 sm:grid-w30 shadow-md" >}}
+  {{< figure src="img/000042060037.jpg" figureClass="grid-w100 sm:grid-w30 shadow-md" >}}
+  {{< figure src="img/000042060003.jpg" figureClass="grid-w100 sm:grid-w60 shadow-md" >}}
+  {{< figure src="img/000042060047.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
+  {{< figure src="img/000042060067.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
 {{< /gallery >}}

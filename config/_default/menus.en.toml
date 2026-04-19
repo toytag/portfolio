@@ -20,12 +20,6 @@
   pageRef = "/posts"
   weight = 20
 
-[[main]]
-  name = "HomeLab"
-  pre = "link"
-  url = "https://homepage.toytag.net"
-  weight = 30
-
 # [[main]]
 #  name = "Parent"
 #  weight = 20

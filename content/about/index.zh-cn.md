@@ -61,14 +61,14 @@ showTableOfContents : false
 
 {{< timelineItem icon="location-dot" >}}
   <div class="experience-logo-date-layout">
-  <img
-    src="logos/arista.svg"
-    style="max-width: 350px;"
-    class="experience-logo nozoom"
-  />
-  <span class="experience-date">
-    2024/02 - 至今
-  </span>
+    <img
+      src="logos/arista.svg"
+      style="max-width: 350px;"
+      class="experience-logo nozoom"
+    />
+    <span class="experience-date">
+      2024/02 - 至今
+    </span>
   </div>
   <div class="experience-headline">程序猿, Extensible Operating System（EOS）开发</div>
   <div class="experience-content">为数据中心网络交换机系统开发Hitless Restart（无缝重启/零宕机）功能和VXLAN（虚拟可扩展局域网）功能。</div>

@@ -23,8 +23,8 @@ We consider three different natural forces in our blade model: recovery, gravity
 
 - **Recovery**: The recovery force is the counter force to previously applied forces and it is directed to the initial pose of the grass.
 - **Gravity**: The gravity force consist of two additive forces.
-    - One force represents the gravity of the whole scene, i.e. *the environmental gravity*.
-    - The other force is orthogonal to the width of the blade, i.e. *front gravity*.
+  - One force represents the gravity of the whole scene, i.e. *the environmental gravity*.
+  - The other force is orthogonal to the width of the blade, i.e. *front gravity*.
 - **Wind**: The wind force is a force that is applied to the blade in the direction of the wind.
 
 After applied all the forces, we also need to validate the new states of our blades (to make sure they behave like a physically existed grass) and then get the final positions.

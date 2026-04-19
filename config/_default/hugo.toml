@@ -27,6 +27,7 @@ googleAnalytics = "G-YYGW9TP131"
 
 [imaging]
   anchor = 'Center'
+  resampleFilter = 'Lanczos'
 
 [taxonomies]
   tag = "tags"

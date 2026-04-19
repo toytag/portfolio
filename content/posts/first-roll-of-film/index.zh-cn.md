@@ -10,6 +10,8 @@ showWordCount : false
 
 {{< full-width >}}
 
+{{< carousel images="img/*" aspectRatio="16-9" interval="2500" >}}
+
 柯达金200是一款彩色负片，以其温暖、自然的色调和适中的对比度著称，非常适合在阳光下拍摄。而且价格相对实惠，非常适合初学者。比如我 😎。
 
 这是我第一次使用胶片，入门机Pentax 17拍摄的体验非常棒。我还有一台老古董Nikon FE，也拍了一些。但FE有点漏光，还躺在手术台上。（漏的光样片里看不到全被我裁了）
@@ -17,20 +19,20 @@ showWordCount : false
 ## 菲林精选
 
 {{< gallery >}}
-  {{< responsive-image src="img/000028030064.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028040021.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028030061.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028030014.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028040025.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028030023.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028040004.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028030062.jpg" class="grid-w100 sm:grid-w66 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000032080020.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028040015.jpg" class="grid-w100 sm:grid-w66 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000032080016.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000032080009.jpg" class="grid-w100 sm:grid-w66 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000032080032.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028030070.jpg" class="grid-w100 sm:grid-w66 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028040005.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
-  {{< responsive-image src="img/000028030011.jpg" class="grid-w100 sm:grid-w33 border-4 md:border-8 border-white shadow-md nolazy" >}}
+  {{< figure src="img/000028030064.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000028040021.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000028030061.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000028030014.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000028040025.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000028030023.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000028040004.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000028030062.jpg" figureClass="grid-w100 sm:grid-w66" >}}
+  {{< figure src="img/000032080020.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000028040015.jpg" figureClass="grid-w100 sm:grid-w66" >}}
+  {{< figure src="img/000032080016.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000032080009.jpg" figureClass="grid-w100 sm:grid-w66" >}}
+  {{< figure src="img/000032080032.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000028030070.jpg" figureClass="grid-w100 sm:grid-w66" >}}
+  {{< figure src="img/000028040005.jpg" figureClass="grid-w100 sm:grid-w33" >}}
+  {{< figure src="img/000028030011.jpg" figureClass="grid-w100 sm:grid-w33" >}}
 {{< /gallery >}}

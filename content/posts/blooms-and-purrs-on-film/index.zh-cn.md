@@ -10,6 +10,8 @@ showWordCount : false
 
 {{< full-width >}}
 
+{{< carousel images="img/**/*" aspectRatio="16-9" interval="2500" >}}
+
 北纬四十度的春日总是姗姗来迟，却从不吝啬色彩的馈赠。近日闲步街头，用胶片定格下花开的瞬间与室友家蓝猫的灵动身影。樱花烂漫，猫影轻盈，构成一场春日限定的梦幻共舞。
 
 <div class="text-sm italic" style="text-align: right;">-- 每日涩话</div>
@@ -21,12 +23,12 @@ showWordCount : false
 炮塔400神中神，颗粒细腻，色彩优异。
 
 {{< gallery >}}
-    {{< responsive-image src="img/portra400/000088440036.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/portra400/000088440005.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/portra400/000088440014.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/portra400/000088440012.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/portra400/000088440017.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/portra400/000088440029.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
+  {{< figure src="img/portra400/000088440036.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/portra400/000088440005.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/portra400/000088440014.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/portra400/000088440012.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/portra400/000088440017.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/portra400/000088440029.jpg" figureClass="grid-w100 sm:grid-w50" >}}
 {{< /gallery >}}
 
 ## Fujifilm 400 + Pentax 17
@@ -34,17 +36,17 @@ showWordCount : false
 富士400在各种光线条件下都表现尚可。与炮塔400相比呈现出略有差异的色彩风格，但远不如其细腻。
 
 {{< gallery >}}
-    {{< responsive-image src="img/fuji400/000088450007.jpg" class="grid-w100 sm:grid-w50 lg:grid-w33 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji400/000088450005.jpg" class="grid-w100 sm:grid-w50 lg:grid-w33 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji400/000088450013.jpg" class="grid-w100 sm:grid-w50 lg:grid-w33 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji400/000088450023.jpg" class="grid-w100 sm:grid-w100 lg:grid-w66 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji400/000088450001.jpg" class="grid-w100 sm:grid-w50 lg:grid-w33 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji400/000088450004.jpg" class="grid-w100 sm:grid-w50 lg:grid-w33 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji400/000088450019.jpg" class="grid-w100 sm:grid-w50 lg:grid-w33 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji400/000088450003.jpg" class="grid-w100 sm:grid-w50 lg:grid-w33 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji400/000088450043.jpg" class="grid-w100 sm:grid-w50 lg:grid-w33 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji400/000088450041.jpg" class="grid-w100 sm:grid-w50 lg:grid-w33 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji400/000088450045.jpg" class="grid-w100 sm:grid-w50 lg:grid-w33 border-fluid border-white shadow-md nolazy" >}}
+  {{< figure src="img/fuji400/000088450007.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450005.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450013.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450023.jpg" figureClass="grid-w100 sm:grid-w100 lg:grid-w66" >}}
+  {{< figure src="img/fuji400/000088450001.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450004.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450019.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450003.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450043.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450041.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450045.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
 {{< /gallery >}}
 
 ## Fujifilm 200 + Nikon FE
@@ -54,8 +56,8 @@ showWordCount : false
 经济实惠，买不了吃亏，买不了上当，但也没比富士400便宜多少。扫描出来的默认底片发黄，有一种换皮柯达金200的感觉。
 
 {{< gallery >}}
-    {{< responsive-image src="img/fuji200/000088460010.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji200/000088460028.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji200/000088460031.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
-    {{< responsive-image src="img/fuji200/000088460003.jpg" class="grid-w100 sm:grid-w50 border-fluid border-white shadow-md nolazy" >}}
+  {{< figure src="img/fuji200/000088460010.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/fuji200/000088460028.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/fuji200/000088460031.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/fuji200/000088460003.jpg" figureClass="grid-w100 sm:grid-w50" >}}
 {{< /gallery >}}
