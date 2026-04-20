@@ -10,7 +10,8 @@ showWordCount : false
 
 {{< full-width >}}
 
-{{< carousel images="img/**/*" aspectRatio="16-9" interval="2500" >}}
+{{< carousel images="img/*" aspectRatio="16-10" interval="2500" >}}
+{{< shuffle-carousel >}}
 
 富士400是一款多功能的彩色负片胶卷，以其鲜艳而平衡的色彩深受喜爱。上周末，我带着一卷富士400前往塔夫茨大学，探索校园地标与充满惊喜的角落。
 

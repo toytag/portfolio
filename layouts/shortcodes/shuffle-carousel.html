@@ -1,0 +1,57 @@
+<script defer>
+  (() => {
+    const script = document.currentScript;
+    if (!script) return;
+
+    let root = script.previousElementSibling;
+    while (root && !root.matches("[data-twe-carousel-init]")) {
+      root = root.previousElementSibling;
+    }
+    if (!root) return;
+
+    const items = Array.from(root.querySelectorAll("[data-twe-carousel-item]"));
+    if (items.length < 2) return;
+
+    const track = items[0].parentElement;
+    const indicatorsRoot = root.querySelector("[data-twe-carousel-indicators]");
+    const indicators = indicatorsRoot
+      ? Array.from(indicatorsRoot.querySelectorAll("[data-twe-slide-to]"))
+      : [];
+    const hasIndicators = indicatorsRoot && indicators.length === items.length;
+
+    const slides = items.map((item, index) => ({
+      item,
+      indicator: hasIndicators ? indicators[index] : null,
+    }));
+
+    for (let index = slides.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [slides[index], slides[swapIndex]] = [slides[swapIndex], slides[index]];
+    }
+
+    slides.forEach(({ item, indicator }, index) => {
+      const active = index === 0;
+
+      track.append(item);
+      item.classList.toggle("hidden", !active);
+      if (active) {
+        item.setAttribute("data-twe-carousel-active", "");
+      } else {
+        item.removeAttribute("data-twe-carousel-active");
+      }
+
+      if (!indicator || !indicatorsRoot) return;
+
+      indicatorsRoot.append(indicator);
+      indicator.setAttribute("data-twe-slide-to", index);
+      indicator.setAttribute("aria-label", `Slide ${index + 1}`);
+      if (active) {
+        indicator.setAttribute("data-twe-carousel-active", "");
+        indicator.setAttribute("aria-current", "true");
+      } else {
+        indicator.removeAttribute("data-twe-carousel-active");
+        indicator.removeAttribute("aria-current");
+      }
+    });
+  })();
+</script>

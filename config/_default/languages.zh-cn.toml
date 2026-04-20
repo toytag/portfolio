@@ -1,3 +1,4 @@
+disabled = false
 locale = "zh-cn"
 label = "中文"
 weight = 2

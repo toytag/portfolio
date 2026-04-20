@@ -24,7 +24,16 @@ https://conway-game-of-life.toytag.net
 
 模拟分辨率为 1024x1024。嵌入式演示默认为 WebGPU 版本，因为它更高效，CPU 占用更低。
 
-<embed type="text/html" src="https://conway-game-of-life.toytag.net/webgpu" class="rounded-md aspect-[4/5]" width="100%" />
+<iframe
+  src="https://conway-game-of-life.toytag.net/webgpu"
+  class="rounded-md"
+  style="display: block; width: 100%; aspect-ratio: 4 / 5; min-height: 468px; border: 0;"
+  title="Conway's Game of Life WebGPU demo"
+  loading="lazy"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allow="webgpu"
+  sandbox="allow-scripts">
+</iframe>
 
 ## 参考资料
 - [您的第一个 WebGPU 应用 - 康威生命游戏](https://codelabs.developers.google.com/your-first-webgpu-app)

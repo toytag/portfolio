@@ -10,7 +10,8 @@ showWordCount : false
 
 {{< full-width >}}
 
-{{< carousel images="img/**/*" aspectRatio="16-9" interval="2500" >}}
+{{< carousel images="img/**/*" aspectRatio="16-10" interval="2500" >}}
+{{< shuffle-carousel >}}
 
 北纬四十度的春日总是姗姗来迟，却从不吝啬色彩的馈赠。近日闲步街头，用胶片定格下花开的瞬间与室友家蓝猫的灵动身影。樱花烂漫，猫影轻盈，构成一场春日限定的梦幻共舞。
 

@@ -10,7 +10,8 @@ showWordCount : false
 
 {{< full-width >}}
 
-{{< carousel images="img/*" aspectRatio="16-9" interval="2500" >}}
+{{< carousel images="img/*" aspectRatio="16-10" interval="2500" >}}
+{{< shuffle-carousel >}}
 
 柯达金200是一款彩色负片，以其温暖、自然的色调和适中的对比度著称，非常适合在阳光下拍摄。而且价格相对实惠，非常适合初学者。比如我 😎。
 

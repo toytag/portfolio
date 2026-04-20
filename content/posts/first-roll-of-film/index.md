@@ -10,7 +10,8 @@ showWordCount : false
 
 {{< full-width >}}
 
-{{< carousel images="img/*" aspectRatio="16-9" interval="2500" >}}
+{{< carousel images="img/*" aspectRatio="16-10" interval="2500" >}}
+{{< shuffle-carousel >}}
 
 Kodak Gold 200 is a color negative film known for its warm, natural tones and moderate contrast—perfect for shooting in sunlight. Plus, it’s relatively affordable, making it beginner-friendly. 😎
 

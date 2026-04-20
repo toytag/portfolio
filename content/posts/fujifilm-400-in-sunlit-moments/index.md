@@ -10,7 +10,8 @@ showWordCount : false
 
 {{< full-width >}}
 
-{{< carousel images="img/*" aspectRatio="16-9" interval="2500" >}}
+{{< carousel images="img/*" aspectRatio="16-10" interval="2500" >}}
+{{< shuffle-carousel >}}
 
 Fujifilm 400 is a versatile color negative film beloved for its vibrant yet balanced colors. Last week, I took a roll to Tufts University, exploring the charming corners, lively quads, and iconic landmarks of the campus.
 

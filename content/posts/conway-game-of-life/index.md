@@ -24,7 +24,16 @@ https://conway-game-of-life.toytag.net
 
 The simulation resolution is 1024x1024. The embedded demo is default to WebGPU version as it more efficient and less CPU intensive.
 
-<embed type="text/html" src="https://conway-game-of-life.toytag.net/webgpu" class="rounded-md aspect-[4/5]" width="100%" />
+<iframe
+  src="https://conway-game-of-life.toytag.net/webgpu"
+  class="rounded-md"
+  style="display: block; width: 100%; aspect-ratio: 4 / 5; min-height: 468px; border: 0;"
+  title="Conway's Game of Life WebGPU demo"
+  loading="lazy"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allow="webgpu"
+  sandbox="allow-scripts">
+</iframe>
 
 ## References
 - [Your first WebGPU app - Conway's Game of Life](https://codelabs.developers.google.com/your-first-webgpu-app)

@@ -10,7 +10,8 @@ showWordCount : false
 
 {{< full-width >}}
 
-{{< carousel images="img/**/*" aspectRatio="16-9" interval="2500" >}}
+{{< carousel images="img/**/*" aspectRatio="16-10" interval="2500" >}}
+{{< shuffle-carousel >}}
 
 It’s springtime, and the world is bursting with color! I recently took a stroll around my neighborhood, capturing the vibrant blooms and playful moments with my roommate's cat. The combination of cherry blossoms 🌸 and feline antics 😼 made for a delightful photo session.
 

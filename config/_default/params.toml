@@ -5,12 +5,15 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://blowfish.page/docs/configuration/#theme-parameters
 
-colorScheme = "slate"
+colorScheme = "one-light"
 defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = false
 
+enableA11y = false
 enableSearch = true
 enableCodeCopy = true
+enableStructuredBreadcrumbs = true
+# enableStyledScrollbar = true # disable to use native scrollbar style (defaults to true)
 
 replyByEmail = false
 
@@ -18,17 +21,29 @@ replyByEmail = false
 # robots = ""
 
 disableImageOptimization = false
+disableImageOptimizationMD = false
 disableTextInHeader = false
 # backgroundImageWidth = 1200
+
 defaultBackgroundImage = "img/bg.webp" # used as default for background images
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
+# defaultSocialImage = "/android-chrome-512x512.png" # used as default for social media sharing (Open Graph and Twitter)
+hotlinkFeatureImage = false
+# Thumbnail aspect ratio as a number (e.g., "1.5", "1.0", "1.777")
+# thumbnailAspectRatio = "1.5"
+# imagePosition = "50% 50%"
 
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
 
+fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384", "sha256"
+
+giteaDefaultServer = "https://git.fsfe.org"
+forgejoDefaultServer = "https://v11.next.forgejo.org"
+
 [header]
-  layout = "fixed-fill-blur" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed-gradient" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = true
@@ -47,6 +62,7 @@ smartTOCHideUnfocusedChildren = false
   cardView = true
   cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
+  disableHeroImageFilter = false # only used when layout equals hero
 
 [article]
   showDate = true
@@ -74,6 +90,9 @@ smartTOCHideUnfocusedChildren = false
   showRelatedContent = true
   relatedContentLimit = 3
   showTaxonomies = true
+  showCategories = true # These will show if showTaxonomies is true.
+  showTags = true # These will show if showTaxonomies is true.
+  showCategoriesInSecondaryColor = false # This will change the color of category badges, so the user can better distinguish between the two. Only if showTaxonomies is true.
   showAuthorsBadges = true
   showWordCount = true
   sharingLinks = [
@@ -87,6 +106,7 @@ smartTOCHideUnfocusedChildren = false
     "whatsapp",
   ]
   showZenMode = false
+  # externalLinkForceNewTab = false # disable to allow external links in the same tab (defaults to true)
 
 [list]
   showHero = true
@@ -112,6 +132,8 @@ smartTOCHideUnfocusedChildren = false
   showTermCount = true
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showViews = false
   showLikes = false
@@ -120,11 +142,13 @@ smartTOCHideUnfocusedChildren = false
 
 [term]
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "thumbAndBackground" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showViews = false
   showLikes = false
-  showTableOfContents = false
+  showTableOfContents = true
   groupByYear = false
   cardView = false
   cardViewScreenWidth = false
@@ -170,3 +194,6 @@ smartTOCHideUnfocusedChildren = false
 [rssnext]
   # feedId = ""
   # userId = ""
+
+[advertisement]
+  # adsense = ""
