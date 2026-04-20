@@ -1,6 +1,7 @@
 ---
 title: "Blooms and Purrs on Film"
 date: 2025-05-11T00:14:00-04:00
+categories: ["photography"]
 tags: ["cat", "flower", "spring", "film", "portra 400", "fujifilm 400", "fujifilm 200", "pentax 17", "nikon fe"]
 
 showReadingTime : false

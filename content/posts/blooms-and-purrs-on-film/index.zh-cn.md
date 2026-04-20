@@ -1,6 +1,7 @@
 ---
 title: "静止了，所有的花开"
 date: 2025-05-11T00:14:00-04:00
+categories: ["photography"]
 tags: ["cat", "flower", "spring", "film", "portra 400", "fujifilm 400", "fujifilm 200", "pentax 17", "nikon fe"]
 
 showReadingTime : false

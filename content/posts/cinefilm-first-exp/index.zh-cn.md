@@ -1,6 +1,7 @@
 ---
 title: "本想电影感，却偏偏翻了车"
 date: 2025-06-06T21:31:24Z
+categories: ["photography"]
 tags: [ "film", "kodak 5219", "kodak 5207", "kentmere pan 200", "pentax 17", "nikon fe" ]
 
 showReadingTime : false

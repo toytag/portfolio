@@ -1,6 +1,7 @@
 ---
 title: "RoboArt - 机械绘画"
 date: 2019-12-05T10:07:06-05:00
+categories: ["projects"]
 tags: ["computer vision", "robotics"]
 
 showAuthor: false

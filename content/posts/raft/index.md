@@ -2,6 +2,7 @@
 title: "Raft Consensus Algorithm"
 date: 2023-09-09T04:47:06-04:00
 draft: true
+categories: ["notes"]
 tags: ["distributed system", "raft"]
 ---
 

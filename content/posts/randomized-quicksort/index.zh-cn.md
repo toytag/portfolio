@@ -1,6 +1,7 @@
 ---
 title: "快速排序中随机性的分析"
 date: 2025-12-31T00:50:21-0500
+categories: ["notes"]
 tags:
   - "algorithms"
   - "quicksort"

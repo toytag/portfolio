@@ -1,6 +1,7 @@
 ---
 title: "Efficient Large Language Model Inference"
 date: 2023-12-11T23:58:30-05:00
+categories: ["projects"]
 tags: ["cuda", "parallel computing"]
 ---
 

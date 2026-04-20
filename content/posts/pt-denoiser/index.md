@@ -1,6 +1,7 @@
 ---
 title: "Path Tracing Denoiser"
 date: 2023-10-21T10:27:51-04:00
+categories: ["projects"]
 tags: ["cuda", "parallel computing", "physically based rendering", "ray tracing"]
 series: ["Path Tracing"]
 series_order: 2

@@ -1,6 +1,7 @@
 ---
 title: "Vulkan Grass Rendering"
 date: 2023-10-30T15:27:51-04:00
+categories: ["projects"]
 tags: ["cuda", "parallel computing", "physically based rendering"]
 ---
 

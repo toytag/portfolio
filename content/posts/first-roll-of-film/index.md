@@ -1,6 +1,7 @@
 ---
 title: "My First Roll of Film: Kodak Gold 200"
 date: 2025-02-24T23:30:30-05:00
+categories: ["photography"]
 tags: ["film", "kodak gold 200", "pentax 17", "nikon fe"]
 
 showReadingTime : false

@@ -1,6 +1,7 @@
 ---
 title: "Fujifilm 400 in Sunlit Moments"
 date: 2025-03-12T23:35:27-05:00
+categories: ["photography"]
 tags: ["film", "fujifilm 400", "pentax 17", "nikon fe"]
 
 showReadingTime : false

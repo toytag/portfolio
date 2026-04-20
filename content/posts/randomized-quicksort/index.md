@@ -1,6 +1,7 @@
 ---
 title: "Randomized Quicksort"
 date: 2025-12-31T00:50:21-0500
+categories: ["notes"]
 tags:
   - "algorithms"
   - "quicksort"

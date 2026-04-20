@@ -1,6 +1,7 @@
 ---
 title: "Conway's Game of Life"
 date: 2024-01-02T10:30:30-05:00
+categories: ["projects"]
 tags: ["javascript", "wasm", "webgpu", "parallel computing"]
 ---
 
@@ -27,9 +28,10 @@ The simulation resolution is 1024x1024. The embedded demo is default to WebGPU v
 <iframe
   src="https://conway-game-of-life.toytag.net/webgpu"
   class="rounded-md"
-  style="display: block; width: 100%; aspect-ratio: 4 / 5; min-height: 468px; border: 0;"
+  style="display: block; width: 100%; aspect-ratio: 1;"
   title="Conway's Game of Life WebGPU demo"
   loading="lazy"
+  scrolling="no"
   referrerpolicy="strict-origin-when-cross-origin"
   allow="webgpu"
   sandbox="allow-scripts">

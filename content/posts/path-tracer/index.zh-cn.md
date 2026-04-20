@@ -1,6 +1,7 @@
 ---
 title: "光追：路径追踪与物理渲染"
 date: 2023-10-12T11:00:36-04:00
+categories: ["projects"]
 tags: ["cuda", "parallel computing", "physically based rendering", "ray tracing"]
 series: ["Path Tracing"]
 series_order: 1

@@ -1,6 +1,7 @@
 ---
 title: "Search Engine"
 date: 2022-05-05T12:58:30-04:00
+categories: ["projects"]
 tags: ["distributed system", "microservices", "apache storm", "apache spark", "docker swarm", "kubernetes"]
 ---
 

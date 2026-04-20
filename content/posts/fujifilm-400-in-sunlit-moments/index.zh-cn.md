@@ -1,6 +1,7 @@
 ---
 title: "富士400——等到放晴那天，也许我会比较好一点"
 date: 2025-03-12T23:35:27-05:00
+categories: ["photography"]
 tags: ["film", "fujifilm 400", "pentax 17", "nikon fe"]
 
 showReadingTime : false
