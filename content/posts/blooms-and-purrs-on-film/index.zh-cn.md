@@ -25,12 +25,12 @@ showWordCount : false
 炮塔400神中神，颗粒细腻，色彩优异。
 
 {{< gallery >}}
-  {{< figure src="img/portra400/000088440036.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/portra400/000088440005.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/portra400/000088440014.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/portra400/000088440012.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/portra400/000088440017.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/portra400/000088440029.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/portra400/000088440036.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/portra400/000088440005.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/portra400/000088440014.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/portra400/000088440012.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/portra400/000088440017.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/portra400/000088440029.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
 {{< /gallery >}}
 
 ## Fujifilm 400 + Pentax 17
@@ -38,17 +38,17 @@ showWordCount : false
 富士400在各种光线条件下都表现尚可。与炮塔400相比呈现出略有差异的色彩风格，但远不如其细腻。
 
 {{< gallery >}}
-  {{< figure src="img/fuji400/000088450007.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450005.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450013.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450023.jpg" figureClass="grid-w100 sm:grid-w100 lg:grid-w66" >}}
-  {{< figure src="img/fuji400/000088450001.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450004.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450019.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450003.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450043.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450041.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450045.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450007.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450005.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450013.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450023.jpg" figureClass="grid-w100 sm:grid-w100 lg:grid-w66" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450001.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450004.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450019.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450003.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450043.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450041.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450045.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
 {{< /gallery >}}
 
 ## Fujifilm 200 + Nikon FE
@@ -58,8 +58,8 @@ showWordCount : false
 经济实惠，买不了吃亏，买不了上当，但也没比富士400便宜多少。扫描出来的默认底片发黄，有一种换皮柯达金200的感觉。
 
 {{< gallery >}}
-  {{< figure src="img/fuji200/000088460010.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/fuji200/000088460028.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/fuji200/000088460031.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/fuji200/000088460003.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/fuji200/000088460010.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji200/000088460028.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji200/000088460031.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji200/000088460003.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
 {{< /gallery >}}

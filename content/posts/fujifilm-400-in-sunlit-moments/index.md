@@ -25,19 +25,19 @@ Happy shooting! 📸✨
 ## Featured Photos
 
 {{< gallery >}}
-  {{< figure src="img/000042060004.jpg" figureClass="grid-w100 sm:grid-w60 shadow-md" >}}
-  {{< figure src="img/000042050002.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
-  {{< figure src="img/000042060027.jpg" figureClass="grid-w100 sm:grid-w30 shadow-md" >}}
-  {{< figure src="img/000042060029.jpg" figureClass="grid-w100 sm:grid-w30 shadow-md" >}}
-  {{< figure src="img/000042050006.jpg" figureClass="grid-w100 sm:grid-w60 shadow-md" >}}
-  {{< figure src="img/000042060023.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
-  {{< figure src="img/000042050003.jpg" figureClass="grid-w100 sm:grid-w60 shadow-md" >}}
-  {{< figure src="img/000042060016.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
-  {{< figure src="img/000042060007.jpg" figureClass="grid-w100 sm:grid-w60 shadow-md" >}}
-  {{< figure src="img/000042060005.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
-  {{< figure src="img/000042060046.jpg" figureClass="grid-w100 sm:grid-w30 shadow-md" >}}
-  {{< figure src="img/000042060037.jpg" figureClass="grid-w100 sm:grid-w30 shadow-md" >}}
-  {{< figure src="img/000042060003.jpg" figureClass="grid-w100 sm:grid-w60 shadow-md" >}}
-  {{< figure src="img/000042060047.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
-  {{< figure src="img/000042060067.jpg" figureClass="grid-w100 sm:grid-w40 shadow-md" >}}
+  {{< figure src="img/000042060004.jpg" figureClass="grid-w100 sm:grid-w60" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042050002.jpg" figureClass="grid-w100 sm:grid-w40" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060027.jpg" figureClass="grid-w100 sm:grid-w30" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060029.jpg" figureClass="grid-w100 sm:grid-w30" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042050006.jpg" figureClass="grid-w100 sm:grid-w60" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060023.jpg" figureClass="grid-w100 sm:grid-w40" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042050003.jpg" figureClass="grid-w100 sm:grid-w60" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060016.jpg" figureClass="grid-w100 sm:grid-w40" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060007.jpg" figureClass="grid-w100 sm:grid-w60" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060005.jpg" figureClass="grid-w100 sm:grid-w40" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060046.jpg" figureClass="grid-w100 sm:grid-w30" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060037.jpg" figureClass="grid-w100 sm:grid-w30" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060003.jpg" figureClass="grid-w100 sm:grid-w60" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060047.jpg" figureClass="grid-w100 sm:grid-w40" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/000042060067.jpg" figureClass="grid-w100 sm:grid-w40" class="img-border-fluid" nozoom=true >}}
 {{< /gallery >}}

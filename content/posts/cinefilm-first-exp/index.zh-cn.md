@@ -35,22 +35,22 @@ showWordCount : false
 *搭配 [AF Nikkor 28-105mm f/3.5-4.5D](https://www.kenrockwell.com/nikon/28105af.htm) 和 [Nikkor AI-s 50mm f/1.4](https://kenrockwell.com/nikon/50mm-f14-ais.htm) 镜头*
 
 {{< gallery >}}
-  {{< figure src="img/kodak5219/000003840034.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w66" >}}
-  {{< figure src="img/kodak5219/000003840028.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kodak5219/000003840031.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kodak5219/000003840017.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kodak5219/000003840036.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/kodak5219/000003840034.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w66" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kodak5219/000003840028.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kodak5219/000003840031.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kodak5219/000003840017.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kodak5219/000003840036.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
 {{< /gallery >}}
 
 ## Kodak 5207 + Pentax 17
 
 {{< gallery >}}
-  {{< figure src="img/kodak5207/000008390015.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w66" >}}
-  {{< figure src="img/kodak5207/000008390031.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kodak5207/000008390052.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kodak5207/000008390013.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kodak5207/000008390064.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kodak5207/000008390019.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/kodak5207/000008390015.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w66" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kodak5207/000008390031.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kodak5207/000008390052.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kodak5207/000008390013.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kodak5207/000008390064.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kodak5207/000008390019.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
 {{< /gallery >}}
 
 ## One more thing: Kentmere Pan 200 + Nikon FE
@@ -58,11 +58,11 @@ showWordCount : false
 *搭配 [AF Nikkor 28-105mm f/3.5-4.5D](https://www.kenrockwell.com/nikon/28105af.htm) 镜头*
 
 {{< gallery >}}
-  {{< figure src="img/kentmere-pan-200/000010710003.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w66" >}}
-  {{< figure src="img/kentmere-pan-200/000010710034.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kentmere-pan-200/000010710012.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kentmere-pan-200/000010710011.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kentmere-pan-200/000010710018.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kentmere-pan-200/000010710022.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/kentmere-pan-200/000010710025.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/kentmere-pan-200/000010710003.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w66" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kentmere-pan-200/000010710034.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kentmere-pan-200/000010710012.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kentmere-pan-200/000010710011.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kentmere-pan-200/000010710018.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kentmere-pan-200/000010710022.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/kentmere-pan-200/000010710025.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
 {{< /gallery >}}

@@ -23,12 +23,12 @@ It’s springtime, and the world is bursting with color! I recently took a strol
 The gold standard for color negative film, known for its fine grain and excellent skin tones. It captures the warmth of spring beautifully.
 
 {{< gallery >}}
-  {{< figure src="img/portra400/000088440036.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/portra400/000088440005.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/portra400/000088440014.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/portra400/000088440012.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/portra400/000088440017.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/portra400/000088440029.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/portra400/000088440036.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/portra400/000088440005.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/portra400/000088440014.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/portra400/000088440012.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/portra400/000088440017.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/portra400/000088440029.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
 {{< /gallery >}}
 
 ## Fujifilm 400 shot on Pentax 17
@@ -36,17 +36,17 @@ The gold standard for color negative film, known for its fine grain and excellen
 A versatile color negative film that excels in various lighting conditions, providing a slightly different color palette compared to Portra.
 
 {{< gallery >}}
-  {{< figure src="img/fuji400/000088450007.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450005.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450013.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450023.jpg" figureClass="grid-w100 sm:grid-w100 lg:grid-w66" >}}
-  {{< figure src="img/fuji400/000088450001.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450004.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450019.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450003.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450043.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450041.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
-  {{< figure src="img/fuji400/000088450045.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" >}}
+  {{< figure src="img/fuji400/000088450007.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450005.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450013.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450023.jpg" figureClass="grid-w100 sm:grid-w100 lg:grid-w66" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450001.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450004.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450019.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450003.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450043.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450041.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji400/000088450045.jpg" figureClass="grid-w100 sm:grid-w50 lg:grid-w33" class="img-border-fluid" nozoom=true >}}
 {{< /gallery >}}
 
 ## Fujifilm 200 shot on Nikon FE
@@ -56,8 +56,8 @@ A versatile color negative film that excels in various lighting conditions, prov
 A more budget-friendly option that still delivers ok results in bright daylight. The scans came out a bit yellowish, reminiscent of Kodak Gold 200. I wouldn't say it's a bad film, but I don't recommend it.
 
 {{< gallery >}}
-  {{< figure src="img/fuji200/000088460010.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/fuji200/000088460028.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/fuji200/000088460031.jpg" figureClass="grid-w100 sm:grid-w50" >}}
-  {{< figure src="img/fuji200/000088460003.jpg" figureClass="grid-w100 sm:grid-w50" >}}
+  {{< figure src="img/fuji200/000088460010.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji200/000088460028.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji200/000088460031.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
+  {{< figure src="img/fuji200/000088460003.jpg" figureClass="grid-w100 sm:grid-w50" class="img-border-fluid" nozoom=true >}}
 {{< /gallery >}}
