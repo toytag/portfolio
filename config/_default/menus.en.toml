@@ -16,7 +16,7 @@
   weight = 10
 
 [[main]]
-  name = "Blog"
+  name = "Posts"
   pageRef = "/posts"
   weight = 20
 
