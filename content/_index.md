@@ -1,4 +1,4 @@
 ---
 title: "Welcome to toytag.net"
-Description: "Hi, I am Zhenzhong Tang, a software developer. This is my personal website."
+description: "Personal website of Zhenzhong Tang, a software developer sharing projects, technical write-ups, and photography."
 ---
