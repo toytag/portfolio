@@ -26,16 +26,16 @@ Most of this set is digital: quick, bright, and forgiving, the kind of camera I 
 ## Featured Photos
 
 {{< gallery >}}
-  {{< figure src="img/dsc_0282.webp" figureClass="grid-w100 sm:grid-w60" class="img-border" >}}
-  {{< figure src="img/dsc_0296.webp" figureClass="grid-w100 sm:grid-w60" class="img-border" >}}
-  {{< figure src="img/dsc_0304.webp" figureClass="grid-w100 sm:grid-w60" class="img-border" >}}
-  {{< figure src="img/dsc_0319.webp" figureClass="grid-w100 sm:grid-w60" class="img-border" >}}
+  {{< figure src="img/dsc_0282.webp" figureClass="grid-w100 sm:grid-w60" class="img-border" nozoom=true >}}
+  {{< figure src="img/dsc_0296.webp" figureClass="grid-w100 sm:grid-w60" class="img-border" nozoom=true >}}
+  {{< figure src="img/dsc_0304.webp" figureClass="grid-w100 sm:grid-w60" class="img-border" nozoom=true >}}
+  {{< figure src="img/dsc_0319.webp" figureClass="grid-w100 sm:grid-w60" class="img-border" nozoom=true >}}
 
-  {{< figure src="img/dsc_0310.webp" figureClass="grid-w100 sm:grid-w40" class="img-border" >}}
-  {{< figure src="img/dsc_0327.webp" figureClass="grid-w100 sm:grid-w40" class="img-border" >}}
-  {{< figure src="img/dsc_0292.webp" figureClass="grid-w100 sm:grid-w40" class="img-border" >}}
-  {{< figure src="img/dsc_0297.webp" figureClass="grid-w100 sm:grid-w40" class="img-border" >}}
+  {{< figure src="img/dsc_0310.webp" figureClass="grid-w100 sm:grid-w40" class="img-border" nozoom=true >}}
+  {{< figure src="img/dsc_0327.webp" figureClass="grid-w100 sm:grid-w40" class="img-border" nozoom=true >}}
+  {{< figure src="img/dsc_0292.webp" figureClass="grid-w100 sm:grid-w40" class="img-border" nozoom=true >}}
+  {{< figure src="img/dsc_0297.webp" figureClass="grid-w100 sm:grid-w40" class="img-border" nozoom=true >}}
 
-  {{< figure src="img/dsc_0314.webp" figureClass="grid-w100 sm:grid-w30" class="img-border" >}}
-  {{< figure src="img/000088450006.jpg" figureClass="grid-w100 sm:grid-w30" class="img-border" >}}
+  {{< figure src="img/dsc_0314.webp" figureClass="grid-w100 sm:grid-w30" class="img-border" nozoom=true >}}
+  {{< figure src="img/000088450006.jpg" figureClass="grid-w100 sm:grid-w30" class="img-border" nozoom=true >}}
 {{< /gallery >}}
