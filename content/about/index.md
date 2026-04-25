@@ -21,7 +21,6 @@ Previously, at Amazon and Western Digital, I optimized large-scale ML systems fo
 
 Always eager to tackle challenging problems and learn new skills!
 
-
 <style>
 /* Convert rem to px: px = rem × base (Typically, base = 16px) */
 
@@ -47,7 +46,7 @@ Always eager to tackle challenging problems and learn new skills!
   margin: 0.375rem 0;
   padding: 0rem 0.375rem;
   font-size: 0.75rem;
-  font-style: italic; 
+  font-style: italic;
 }
 
 .experience-headline {

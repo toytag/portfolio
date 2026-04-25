@@ -11,7 +11,7 @@ title = "@toytag.net"
   dateFormat = "2006-01-02"
   # logo = "logo.png"
   # secondaryLogo = "logo.png"
-  # description = "Zhenzhong Tang's Odyssey: Portfolio, Blog, and Beyond"
+  description = "汤振中的个人网站，分享软件项目、技术文章与摄影作品。"
   # copyright = "Copy, _right?_ :thinking_face: <br> &copy; { year } Zhenzhong Tang"
 
 [params.author]

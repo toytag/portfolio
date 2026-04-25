@@ -11,7 +11,7 @@ title = "@toytag.net"
   dateFormat = "Mon, Jan 2, 2006"
   # logo = "logo.png"
   # secondaryLogo = "logo.png"
-  description = "Zhenzhong Tang's Odyssey: Portfolio, Blog, and Beyond"
+  description = "Personal website of Zhenzhong Tang, a software developer sharing projects, technical write-ups, and photography."
   copyright = "Copy, _right?_ 🤔 <br> &copy; { year } Zhenzhong Tang"
 
 [params.author]

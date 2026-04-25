@@ -13,7 +13,7 @@ showWordCount : false
 showTableOfContents : false
 ---
 
-我叫汤振中，目前在Arista Networks做一名软件工程师，曾就读于宾夕法尼亚大学计算机与信息科学（CIS）硕士项目。我对构建“鲁棒”且高性能的系统很感兴趣。在Arista Networks，我参与了Extensible Operating System（EOS）网络操作系统的开发，负责实现Hitless Restart无缝重启功能以最小化丢包和停机时间，同时优化VXLAN技术以更好服务数据中心网络需求。
+我叫汤振中，目前在Arista Networks做一名软件工程师，毕业读于宾夕法尼亚大学计算机与信息科学（CIS）硕士项目。我对构建“鲁棒”且高性能的系统很感兴趣。在Arista Networks，我参与了Extensible Operating System（EOS）网络操作系统的开发，重点负责EVPN-VXLAN相关功能的开发与优化，以更好服务数据中心网络的二层/三层互联需求。
 
 此前，我有幸在Amazon和Western Digital实习，并积累了丰富的开发经验。主要负责优化机器学习推理系统，以提升广告推荐模型处理量和速度。此外，我还在个人VPS和家庭服务器上实践过Docker与Kubernetes的云端管理经验。
 
@@ -44,7 +44,7 @@ showTableOfContents : false
   margin: 0.375rem 0;
   padding: 0rem 0.375rem;
   font-size: 0.75rem;
-  font-style: italic; 
+  font-style: italic;
 }
 
 .experience-headline {
@@ -62,7 +62,7 @@ showTableOfContents : false
 {{< timelineItem icon="location-dot" >}}
   <div class="experience-logo-date-layout">
     <img
-      src="logos/arista.svg"
+      src="/about/logos/arista.svg"
       style="max-width: 350px;"
       class="experience-logo nozoom"
     />
@@ -71,13 +71,13 @@ showTableOfContents : false
     </span>
   </div>
   <div class="experience-headline">程序猿, Extensible Operating System（EOS）开发</div>
-  <div class="experience-content">为数据中心网络交换机系统开发Hitless Restart（无缝重启/零宕机）功能和VXLAN（虚拟可扩展局域网）功能。</div>
+  <div class="experience-content">为数据中心网络交换机系统开发和优化EVPN-VXLAN相关功能。</div>
 {{< /timelineItem >}}
 
 {{< timelineItem icon="check" >}}
   <div class="experience-logo-date-layout">
     <img
-      src="logos/amazon.svg"
+      src="/about/logos/amazon.svg"
       style="max-width: 260px;"
       class="experience-logo nozoom"
     />
@@ -92,7 +92,7 @@ showTableOfContents : false
 {{< timelineItem icon="check" >}}
   <div class="experience-logo-date-layout">
     <img
-      src="logos/western_digital.svg"
+      src="/about/logos/western_digital.svg"
       style="max-width: 550px;"
       class="experience-logo nozoom"
     />
@@ -113,7 +113,7 @@ showTableOfContents : false
 {{< timelineItem icon="check" >}}
   <div class="experience-logo-date-layout">
     <img
-      src="logos/upenn.png"
+      src="/about/logos/upenn.png"
       style="max-width: 240px;"
       class="experience-logo nozoom"
     />
@@ -127,7 +127,7 @@ showTableOfContents : false
 {{< timelineItem icon="check" >}}
   <div class="experience-logo-date-layout">
     <img
-      src="logos/shanghaitech.svg"
+      src="/about/logos/shanghaitech.svg"
       style="max-width: 285px;"
       class="experience-logo nozoom"
     />
@@ -141,7 +141,7 @@ showTableOfContents : false
 {{< timelineItem icon="check" >}}
   <div class="experience-logo-date-layout">
     <img
-      src="logos/ucberkeley.png"
+      src="/about/logos/ucberkeley.png"
       style="max-width: 300px;"
       class="experience-logo nozoom"
     />
