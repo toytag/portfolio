@@ -3,14 +3,13 @@ title: "自述"
 description: "过于简历化的自我介绍"
 
 showAuthor: false
-showDate : false
-showDateUpdated : false
-showHeadingAnchors : false
-# showPagination : false
-showReadingTime : false
-# showTaxonomies : false
-showWordCount : false
-showTableOfContents : false
+showDate: false
+showDateUpdated: false
+showHeadingAnchors: false
+showReadingTime: false
+showTableOfContents: false
+showWordCount: false
+sharingLinks: false
 ---
 
 我叫汤振中，目前在Arista Networks做一名软件工程师，毕业读于宾夕法尼亚大学计算机与信息科学（CIS）硕士项目。我对构建“鲁棒”且高性能的系统很感兴趣。在Arista Networks，我参与了Extensible Operating System（EOS）网络操作系统的开发，重点负责EVPN-VXLAN相关功能的开发与优化，以更好服务数据中心网络的二层/三层互联需求。
@@ -67,7 +66,7 @@ showTableOfContents : false
       class="experience-logo nozoom"
     />
     <span class="experience-date">
-      2024/02 - 至今
+      2024年2月 - 至今
     </span>
   </div>
   <div class="experience-headline">程序猿, Extensible Operating System（EOS）开发</div>
@@ -82,7 +81,7 @@ showTableOfContents : false
       class="experience-logo nozoom"
     />
     <span class="experience-date">
-      2022/09 - 2022/12
+      2022年9月 - 2022年12月
     </span>
   </div>
   <div class="experience-headline">实习程序猿，广告推荐机器学习推理系统开发</div>
@@ -97,7 +96,7 @@ showTableOfContents : false
       class="experience-logo nozoom"
     />
     <span class="experience-date">
-      May 2022 - Aug. 2022
+      2022年5月 - 2022年8月
     </span>
   </div>
   <div class="experience-headline">实习程序猿，数据中心机械硬盘固件开发</div>
@@ -118,7 +117,7 @@ showTableOfContents : false
       class="experience-logo nozoom"
     />
     <span class="experience-date">
-      2021/08 - 2023/12
+      2021年8月 - 2023年12月
     </span>
   </div>
   <div class="experience-headline">计算机科学 硕士</div>
@@ -132,7 +131,7 @@ showTableOfContents : false
       class="experience-logo nozoom"
     />
     <span class="experience-date">
-      2017/09 - 2021/06
+      2017年9月 - 2021年6月
     </span>
   </div>
   <div class="experience-headline">计算机科学 学士</div>
@@ -146,7 +145,7 @@ showTableOfContents : false
       class="experience-logo nozoom"
     />
     <span class="experience-date">
-      2019/08 - 2020/05
+      2019年8月 - 2020年5月
     </span>
   </div>
   <div class="experience-headline">电子工程与计算机科学 交换生</div>

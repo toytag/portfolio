@@ -3,19 +3,16 @@ title: "About"
 description: "Discover the person behind the pixels – exploring life, coding, and the moments that shape me."
 
 showAuthor: false
-showDate : false
-showDateUpdated : false
-showHeadingAnchors : false
-# showPagination : false
-showReadingTime : false
-# showTaxonomies : false
-showWordCount : false
-showTableOfContents : false
-showLinks : false
-sharingLinks : false
+showDate: false
+showDateUpdated: false
+showHeadingAnchors: false
+showReadingTime: false
+showTableOfContents: false
+showWordCount: false
+sharingLinks: false
 ---
 
-Hi, I'm Zhenzhong Tang, a Software Engineer at Arista Networks and a former Computer and Information Science (CIS) master's student at the University of Pennsylvania. My passion lies in building robust, high-performance systems. At Arista, I work on the EOS (Extensible Operating System), developing hitless restart features for minimal downtime and optimizing data center networking with VXLAN (Virtual eXtensible Local Area Network).
+Hi, I'm Zhenzhong Tang, a Software Engineer at Arista Networks and a former Computer and Information Science (CIS) master's student at the University of Pennsylvania. My passion lies in building robust, high-performance systems. At Arista Networks, I work on EOS (Extensible Operating System), focusing on the development and optimization of EVPN-VXLAN features that support Layer 2 and Layer 3 connectivity in data center networks.
 
 Previously, at Amazon and Western Digital, I optimized large-scale ML systems for ad recommendations and firmware performance. I also had some hands-on cloud admin experience with Docker and Kubernetes on my VPS and home server.
 
@@ -73,7 +70,7 @@ Always eager to tackle challenging problems and learn new skills!
     </span>
   </div>
   <div class="experience-headline">Software Engineer, EOS (Extensible Operating System)</div>
-  <div class="experience-content">Developing hitless restart redundancy feature and VXLAN (Virtual eXtensible Local Area Network) feature for data center networking.</div>
+  <div class="experience-content">Developing and optimizing EVPN-VXLAN features for data center network switch systems.</div>
 {{< /timelineItem >}}
 
 {{< timelineItem icon="check" >}}
