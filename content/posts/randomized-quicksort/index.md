@@ -45,7 +45,9 @@ R-QUICKSORT(A):
   return R-QUICKSORT(L) + E + R-QUICKSORT(G)
 ```
 
-We only need to analyze the number of comparisons, since partitioning dominates the runtime. The deterministic worst case is still \\( O(n^2) \\), but randomization makes the *expected* cost \\( O(n \log n) \\) and makes the quadratic case exponentially unlikely.
+We only need to analyze the number of comparisons, since partitioning dominates the runtime. The deterministic worst case is still \\( O(n^2) \\), but randomization makes the *expected* cost \\( O(n \log n) \\) and makes the exact maximum-comparison path factorially unlikely.
+
+The equality bucket handles duplicate keys in the algorithm. For the comparison-count proof below, I use the standard distinct-keys model.
 
 ## Complexity Analysis through the Expected Number of Comparisons
 
@@ -94,23 +96,23 @@ $$
 
 This is a full, exact expectation result. No recurrence solving needed.
 
-## How Unlikely Is the Quadratic Case?
+## How Unlikely Is the Exact Worst Case?
 
-The \\( O(n^2) \\) behavior happens only when every pivot is an extreme element (minimum or maximum of its subarray). For the whole run, the probability is
+The exact maximum-comparison path happens when every pivot is an extreme element: either the minimum or maximum of its current subarray. For an input of size \\( n \\), this path has probability
 
 $$
 \Pr[\text{worst case}] = \prod_{k=2}^{n} \frac{2}{k} = \frac{2^{n-1}}{n!},
 $$
 
-which is exponentially small! <span class="custom-highlight">For perspective, when \\( n = 10 \\) this is \\( 2^9/10! \approx 0.0141\\% \\), and when \\( n = 20 \\) it's \\( 2^{19}/20! \approx 0.0000000000216\\% \\).</span> The algorithm keeps its worst-case bound, but randomization pushes that case into the far tail.
+which is factorially small. <span class="custom-highlight">For perspective, when \\( n = 10 \\) this is \\( 2^9/10! \approx 0.0141\\% \\), and when \\( n = 20 \\) it's \\( 2^{19}/20! \approx 0.0000000000216\\% \\).</span> The algorithm keeps its worst-case bound, but randomization pushes the maximum-comparison path into the far tail.
 
 ## Why \\(O(n \log n)\\) Happens with High Probability
 
-Call a pivot **good** if it leaves each element in a subproblem of size at most \\( 3/4 \\) of the current size. After \\( t \\) good pivots, the subproblem size is at most \\( (3/4)^t n \\). We want this to be \\( \le 1 \\), so the recursion ends. This requires \\( t \ge c \log n \\) for some constant \\( c \\).
+Call a pivot **good** if both recursive subproblems have size at most \\( 3/4 \\) of the current subproblem. After \\( t \\) good pivots on any fixed element's recursive path, the subproblem containing that element has size at most \\( (3/4)^t n \\). We want this to be \\( \le 1 \\), so the recursion ends. This requires \\( t \ge c_0 \log n \\) for some constant \\( c_0 \\).
 
-Each pivot is good with probability at least \\( 1/2 \\) (any pivot from the middle half works), and this lower bound holds regardless of what happened before. Consider a single subproblem. Let G be the number of good pivots in m pivot choices for that subproblem. Although these events are not independent, each pivot is good with conditional probability at least 1/2, so \\( G \\) stochastically dominates a \\( \text{Binomial}(m, 1/2) \\) random variable.
+Each pivot is good with probability at least \\( 1/2 \\) (any pivot from the middle half works), and this lower bound holds regardless of what happened before. Consider the recursive path followed by one fixed element. Let \\( G \\) be the number of good pivots in the first \\( m \\) pivot choices on that path. Although these events are not independent, each pivot is good with conditional probability at least \\( 1/2 \\), so \\( G \\) stochastically dominates a \\( \text{Binomial}(m, 1/2) \\) random variable.
 
-Without loss of generality, choose \\( m = \frac{2c}{1 - \delta} \log n \\) for some fixed \\( \delta \in (0,1) \\). Then the mean is \\( \mu = m/2 = \frac{c}{1 - \delta} \log n \\), and the bad event (insufficient progress) is \\( G < c \log n = (1 - \delta)\mu \\). By a standard Chernoff bound for a binomial,
+Choose \\( m = \frac{2c_0}{1 - \delta} \log n \\) for some fixed \\( \delta \in (0,1) \\). Then the mean is \\( \mu = m/2 = \frac{c_0}{1 - \delta} \log n \\), and the bad event (insufficient progress) is \\( G < c_0 \log n = (1 - \delta)\mu \\). By a standard Chernoff bound for a binomial,
 
 $$
 \Pr[G < (1 - \delta)\mu] \le \exp\left(-\frac{\delta^2 \mu}{2}\right).
@@ -119,16 +121,18 @@ $$
 So
 
 $$
-\Pr[G < c \log n] \le \exp\left(-\frac{\delta^2 \mu}{2}\right) = n^{-\frac{\delta^2}{2(1 - \delta)}c}.
+\Pr[G < c_0 \log n] \le \exp\left(-\frac{\delta^2 \mu}{2}\right) = n^{-\frac{\delta^2}{2(1 - \delta)}c_0}.
 $$
 
-For a fixed element, the probability that it experiences more than \\(c \log n\\) recursive calls is polynomially small. For the sake of argument, let's say we choose some \\( \delta \\) and \\( c \\) which makes it \\( n^{-2} \\). By a union bound over all \\( n \\) elements, the probability that any element has recursion depth greater than \\( O(\log n) \\) is at most \\( O(n) \\) times this quantity.
+For a fixed element, the probability that it is still in a nontrivial subproblem after \\( m = \Theta(\log n) \\) recursive calls is polynomially small. Choose constants \\( \delta \\) and \\( c_0 \\) so that the exponent is at least 2, giving probability at most \\( n^{-2} \\). By a union bound over all \\( n \\) elements, the probability that any element has recursion depth greater than \\( m \\) is at most \\( O(n) \\) times this quantity.
 
 $$
-\Pr[\text{any subproblem takes too long}] \le O(n) \cdot n^{-2} = O(n^{-1}),
+\Pr[\text{any element's path takes too long}] \le O(n) \cdot n^{-2} = O(n^{-1}),
 $$
 
-which goes to 0 as \\( n \to \infty \\). <span class="custom-highlight">Intuitively, this is no different from repeatedly tossing a fair coin. For example, in 40 tosses we expect 20 heads on average, and the probability of seeing fewer than 10 heads is only about 0.03\%. Any large deviation from the expectation is extremely unlikely.</span> Likewise, the probability that randomized quicksort fails to make sufficient progress after \\( \Theta(\log n) \\) steps **decays polynomially in \\( n \\)**, with an exponent that grows linearly in \\( c \\).
+which goes to 0 as \\( n \to \infty \\). Since each recursion level partitions disjoint subarrays whose total size is at most \\( n \\), an \\( O(\log n) \\) recursion depth implies \\( O(n \log n) \\) total partitioning work with high probability.
+
+<span class="custom-highlight">Intuitively, this is no different from repeatedly tossing a fair coin. For example, in 40 tosses we expect 20 heads on average, and the probability of seeing fewer than 10 heads is only about 0.03\%. Any large deviation from the expectation is extremely unlikely.</span> Likewise, the probability that randomized quicksort fails to make sufficient progress after \\( \Theta(\log n) \\) steps **decays polynomially in \\( n \\)**, with an exponent that grows linearly in \\( c_0 \\).
 
 ## Summary
 
@@ -136,4 +140,4 @@ Randomization makes quicksort efficient *in expectation* without changing its ba
 
 ## References
 
-- Motwani, Raghavan. *Randomized Algorithms*, Chapter 1, Introduction.
+- Rajeev Motwani and Prabhakar Raghavan, *Randomized Algorithms*, Cambridge University Press, 1995, Chapter 1.
