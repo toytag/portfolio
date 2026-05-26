@@ -44,8 +44,9 @@ googleAnalytics = "G-YYGW9TP131"
   home = ["HTML", "RSS", "JSON"]
 
 [related]
-  threshold = 0
-  toLower = false
+  includeNewer = true
+  threshold = 80
+  toLower = true
 
     [[related.indices]]
         name = "tags"
